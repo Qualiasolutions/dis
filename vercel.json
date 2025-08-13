@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "framework": null,
   "buildCommand": "pnpm --filter=web build",
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install --frozen-lockfile",
   "devCommand": "pnpm --filter=web dev",
+  "directoryListing": false,
   "env": {
     "VITE_SUPABASE_URL": "https://wlmljniorublcadvorvf.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndsbWxqbmlvcnVibGNhZHZvcnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwMTc5NjEsImV4cCI6MjA3MDU5Mzk2MX0.wfPByQtAPf2WaIB-vGG8jH-A7hD_AthnwuhT8xbLH34",
@@ -52,14 +52,20 @@
       "permanent": false
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "https://wlmljniorublcadvorvf.supabase.co/functions/v1/$1"
+      "src": "/api/(.*)",
+      "dest": "https://wlmljniorublcadvorvf.supabase.co/functions/v1/$1"
     },
     {
-      "source": "/((?!api|_next|_static|favicon.ico|manifest.json).*)",
-      "destination": "/index.html"
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|json))",
+      "headers": {
+        "cache-control": "public, max-age=31536000, immutable"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
