@@ -56,6 +56,10 @@
     {
       "source": "/api/(.*)",
       "destination": "https://wlmljniorublcadvorvf.supabase.co/functions/v1/$1"
+    },
+    {
+      "source": "/((?!api|_next|_static|favicon.ico|manifest.json).*)",
+      "destination": "/index.html"
     }
   ]
 }

@@ -26,21 +26,33 @@ VitePWA({
           }
         ]
       },
-      includeAssets: ['favicon.ico'],
+      includeAssets: ['favicon.ico', 'manifest.json'],
       manifest: {
-        name: 'Tahboub DIS',
+        name: 'نظام طهبوب الذكي - Tahboub DIS',
         short_name: 'Tahboub DIS',
-        description: 'نظام طهبوب الذكي - Dealership Intelligence System',
+        description: 'نظام إدارة معارض السيارات بالذكاء الاصطناعي في الأردن',
         theme_color: '#1976d2',
         background_color: '#ffffff',
         display: 'standalone',
         orientation: 'portrait',
         scope: '/',
         start_url: '/',
+        lang: 'ar',
+        dir: 'rtl',
         icons: [
           {
             src: 'favicon.ico',
             sizes: '32x32',
+            type: 'image/x-icon'
+          },
+          {
+            src: 'favicon.ico',
+            sizes: '192x192',
+            type: 'image/x-icon'
+          },
+          {
+            src: 'favicon.ico', 
+            sizes: '512x512',
             type: 'image/x-icon'
           }
         ]
