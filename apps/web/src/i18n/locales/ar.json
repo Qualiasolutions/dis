@@ -1,0 +1,116 @@
+{
+  "welcome": {
+    "title": "مرحباً بكم في نظام ذكاء التاجر",
+    "description": "نظام ذكي لإدارة المعارض وتتبع العملاء باستخدام الذكاء الاصطناعي"
+  },
+  "navigation": {
+    "home": "الرئيسية",
+    "intake": "استمارة العميل",
+    "dashboard": "لوحة التحكم",
+    "customers": "العملاء",
+    "analytics": "التحليلات"
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English",
+    "switch": "تغيير اللغة"
+  },
+  "form": {
+    "customer_info": "معلومات العميل",
+    "name": "الاسم الكامل",
+    "phone": "رقم الهاتف",
+    "email": "البريد الإلكتروني",
+    "vehicle_interest": "اهتمام المركبة",
+    "vehicle_type": "نوع المركبة",
+    "budget_range": "النطاق السعري",
+    "purchase_timeline": "الجدول الزمني للشراء",
+    "notes": "ملاحظات",
+    "consultant": "المستشار",
+    "submit": "إرسال",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "required": "مطلوب",
+    "optional": "اختياري"
+  },
+  "validation": {
+    "name_required": "الاسم مطلوب",
+    "phone_required": "رقم الهاتف مطلوب",
+    "phone_invalid": "رقم الهاتف غير صحيح. يرجى استخدام الصيغة: 07XXXXXXXX",
+    "email_invalid": "البريد الإلكتروني غير صحيح",
+    "vehicle_type_required": "نوع المركبة مطلوب",
+    "budget_required": "النطاق السعري مطلوب"
+  },
+  "vehicle_types": {
+    "sedan": "سيدان",
+    "suv": "دفع رباعي",
+    "hatchback": "هاتشباك",
+    "coupe": "كوبيه",
+    "pickup": "بيك أب",
+    "van": "فان",
+    "luxury": "فاخرة",
+    "sports": "رياضية"
+  },
+  "budget_ranges": {
+    "under_10k": "أقل من 10,000 دينار",
+    "10k_20k": "10,000 - 20,000 دينار",
+    "20k_30k": "20,000 - 30,000 دينار",
+    "30k_50k": "30,000 - 50,000 دينار",
+    "50k_100k": "50,000 - 100,000 دينار",
+    "over_100k": "أكثر من 100,000 دينار"
+  },
+  "purchase_timeline": {
+    "immediately": "فوراً",
+    "within_week": "خلال أسبوع",
+    "within_month": "خلال شهر",
+    "within_3months": "خلال 3 أشهر",
+    "within_6months": "خلال 6 أشهر",
+    "just_looking": "مجرد مطالعة"
+  },
+  "status": {
+    "online": "متصل",
+    "offline": "غير متصل",
+    "syncing": "جارٍ المزامنة",
+    "saved": "تم الحفظ",
+    "error": "خطأ",
+    "success": "نجح",
+    "loading": "جارٍ التحميل"
+  },
+  "messages": {
+    "form_submitted": "تم إرسال الاستمارة بنجاح",
+    "form_saved_offline": "تم حفظ البيانات محلياً. ستتم المزامنة عند الاتصال بالإنترنت",
+    "connection_restored": "تم استعادة الاتصال. جارٍ مزامنة البيانات",
+    "sync_complete": "اكتملت المزامنة",
+    "sync_error": "خطأ في المزامنة. يرجى المحاولة مرة أخرى"
+  },
+  "pwa": {
+    "update_available": "يتوفر تحديث جديد",
+    "update_now": "تحديث الآن",
+    "update_later": "تحديث لاحقاً",
+    "install_app": "تثبيت التطبيق",
+    "add_to_homescreen": "إضافة إلى الشاشة الرئيسية"
+  },
+  "auth": {
+    "welcome": "أهلاً وسهلاً",
+    "login": "تسجيل الدخول",
+    "login_description": "سجل دخولك للوصول إلى النظام",
+    "sign_in": "دخول",
+    "sign_up": "إنشاء حساب",
+    "sign_out": "خروج",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "name": "الاسم الكامل",
+    "role": "الدور",
+    "confirm_password": "تأكيد كلمة المرور",
+    "create_account": "إنشاء حساب",
+    "already_have_account": "لديك حساب بالفعل؟",
+    "dont_have_account": "ليس لديك حساب؟",
+    "profile": "الملف الشخصي",
+    "settings": "الإعدادات"
+  },
+  "roles": {
+    "reception": "موظف الاستقبال",
+    "consultant": "مستشار المبيعات",
+    "manager": "مدير",
+    "admin": "مدير النظام"
+  }
+}

@@ -1,13 +1,39 @@
-# Turborepo starter
+# Dealership Intelligence System (DIS)
 
-This Turborepo starter is maintained by the Turborepo core team.
+AI-powered system for car dealerships in Jordan that captures customer interactions, provides real-time analytics, automates follow-ups, and uses AI to predict purchase intent.
 
-## Using this example
+## Architecture
 
-Run the following command:
+- **Frontend**: React/TypeScript PWA with Mantine UI, bilingual (Arabic/English) support
+- **Backend**: Supabase Edge Functions (Deno runtime) + PostgreSQL
+- **Database**: PostgreSQL with Row Level Security (RLS)
+- **AI Integration**: OpenAI GPT-4 for visit analysis and customer insights
+- **Communication**: WhatsApp Business API, Meta Pixel, Google Analytics
 
-```sh
-npx create-turbo@latest
+## Development Setup
+
+### Prerequisites
+
+- Node.js 18+
+- pnpm 8+
+- Supabase CLI
+
+### Installation
+
+```bash
+# Clone repository
+git clone <repository-url>
+cd dealership-intelligence-system
+
+# Install dependencies
+pnpm install
+
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your actual values
+
+# Start development server
+pnpm dev
 ```
 
 ## What's inside?

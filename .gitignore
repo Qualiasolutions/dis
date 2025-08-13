@@ -1,9 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # Dependencies
-node_modules
+node_modules/
 .pnp
 .pnp.js
+.pnpm-store/
 
 # Local env files
 .env
@@ -13,7 +14,11 @@ node_modules
 .env.production.local
 
 # Testing
-coverage
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
 
 # Turbo
 .turbo
@@ -24,15 +29,36 @@ coverage
 # Build Outputs
 .next/
 out/
-build
-dist
+build/
+dist/
 
+# Supabase local
+.branches/
+.temp/
 
 # Debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Misc
 .DS_Store
 *.pem
+
+# IDE
+.vscode/
+.idea/
+
+# PWA files
+**/sw.js
+**/sw.js.map
+**/workbox-*.js
+**/workbox-*.js.map
+
+# Local testing
+test-deployment.js
+
+# TypeScript
+*.tsbuildinfo

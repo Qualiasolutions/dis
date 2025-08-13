@@ -1,0 +1,254 @@
+{
+  "welcome": {
+    "title": "Welcome to Dealership Intelligence System",
+    "description": "AI-powered system for dealership management and customer tracking"
+  },
+  "navigation": {
+    "home": "Home",
+    "intake": "Customer Intake",
+    "dashboard": "Dashboard",
+    "customers": "Customers",
+    "analytics": "Analytics"
+  },
+  "language": {
+    "arabic": "العربية",
+    "english": "English",
+    "switch": "Switch Language"
+  },
+  "form": {
+    "customer_info": "Customer Information",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "vehicle_interest": "Vehicle Interest",
+    "vehicle_type": "Vehicle Type",
+    "budget_range": "Budget Range",
+    "purchase_timeline": "Purchase Timeline",
+    "notes": "Notes",
+    "consultant": "Consultant",
+    "submit": "Submit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "validation": {
+    "name_required": "Name is required",
+    "phone_required": "Phone number is required",
+    "phone_invalid": "Invalid phone number. Please use format: 07XXXXXXXX",
+    "email_invalid": "Invalid email address",
+    "vehicle_type_required": "Vehicle type is required",
+    "budget_required": "Budget range is required"
+  },
+  "vehicle_types": {
+    "sedan": "Sedan",
+    "suv": "SUV",
+    "hatchback": "Hatchback",
+    "coupe": "Coupe",
+    "pickup": "Pickup",
+    "van": "Van",
+    "luxury": "Luxury",
+    "sports": "Sports"
+  },
+  "budget_ranges": {
+    "under_10k": "Under 10,000 JOD",
+    "10k_20k": "10,000 - 20,000 JOD",
+    "20k_30k": "20,000 - 30,000 JOD",
+    "30k_50k": "30,000 - 50,000 JOD",
+    "50k_100k": "50,000 - 100,000 JOD",
+    "over_100k": "Over 100,000 JOD"
+  },
+  "purchase_timeline": {
+    "immediately": "Immediately",
+    "within_week": "Within a week",
+    "within_month": "Within a month",
+    "within_3months": "Within 3 months",
+    "within_6months": "Within 6 months",
+    "just_looking": "Just looking"
+  },
+  "status": {
+    "online": "Online",
+    "offline": "Offline",
+    "syncing": "Syncing",
+    "saved": "Saved",
+    "error": "Error",
+    "success": "Success",
+    "loading": "Loading"
+  },
+  "messages": {
+    "form_submitted": "Form submitted successfully",
+    "form_saved_offline": "Data saved locally. Will sync when online",
+    "connection_restored": "Connection restored. Syncing data",
+    "sync_complete": "Sync completed",
+    "sync_error": "Sync error. Please try again"
+  },
+  "pwa": {
+    "update_available": "Update available",
+    "update_now": "Update now",
+    "update_later": "Update later",
+    "install_app": "Install App",
+    "add_to_homescreen": "Add to Home Screen"
+  },
+  "auth": {
+    "welcome": "Welcome",
+    "login": "Login",
+    "login_description": "Sign in to access the system",
+    "sign_in": "Sign In",
+    "sign_up": "Sign Up",
+    "sign_out": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "name": "Full Name",
+    "role": "Role",
+    "confirm_password": "Confirm Password",
+    "create_account": "Create Account",
+    "already_have_account": "Already have an account?",
+    "dont_have_account": "Don't have an account?",
+    "profile": "Profile",
+    "settings": "Settings"
+  },
+  "roles": {
+    "reception": "Reception Staff",
+    "consultant": "Sales Consultant",
+    "manager": "Manager",
+    "admin": "Administrator"
+  },
+  "ai": {
+    "analysisTitle": "AI Analysis",
+    "loading": "Analyzing visit data...",
+    "visitNotFound": "Visit not found",
+    "noAnalysisYet": "No AI analysis available yet. Click 'Analyze Now' to generate insights.",
+    "analyzeNow": "Analyze Now",
+    "reanalyze": "Re-analyze",
+    "fallback": "Fallback",
+    "purchaseProb": "Purchase Probability",
+    "sentiment": "Sentiment",
+    "priority": "Priority",
+    "confidence": "Confidence",
+    "recommendedActions": "Recommended Actions",
+    "concerns": "Concerns",
+    "opportunities": "Opportunities",
+    "nextContact": "Next Contact",
+    "culturalConsiderations": "Cultural Considerations",
+    "reasoning": "AI Reasoning",
+    "analyzed": "AI Analyzed",
+    "highPriority": "High Priority",
+    "needsAttention": "Need Attention",
+    "insights": "AI Insights",
+    "lastAnalysis": "Last Analysis",
+    "topActions": "Top Actions",
+    "performance": {
+      "title": "AI Performance Metrics",
+      "totalAnalyses": "Total Analyses",
+      "successRate": "Success Rate",
+      "avgTime": "Avg Time",
+      "avgConfidence": "Avg Confidence",
+      "trendsTitle": "Analysis Trends",
+      "noData": "No performance data available",
+      "methodUsage": "Method Usage",
+      "total": "Total",
+      "accuracy": {
+        "title": "Prediction Accuracy",
+        "overall": "Overall Accuracy",
+        "precision": "Precision",
+        "recall": "Recall",
+        "predictions": "Predictions",
+        "noData": "No accuracy data available"
+      }
+    },
+    "priority": {
+      "title": "Priority Customer Dashboard",
+      "customers": "customers",
+      "loadError": "Failed to load priority customers",
+      "noPriority": "No high-priority customers found",
+      "avgProb": "Avg Purchase Prob",
+      "avgPriority": "Avg Priority",
+      "critical": "Critical",
+      "hot": "Hot Prospects",
+      "high": "High",
+      "medium": "Medium",
+      "normal": "Normal"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Real-time dealership performance overview",
+    "error": "Failed to load dashboard data:",
+    "totalVisits": "Total Visits",
+    "activeVisits": "Active Visits",
+    "conversionRate": "Conversion Rate",
+    "visits": "visits",
+    "completed": "completed",
+    "inProgress": "in progress",
+    "overview": "Overview",
+    "analytics": "Analytics",
+    "quickStats": "Quick Stats",
+    "avgResponseTime": "Avg Response Time",
+    "activeConsultants": "Active Consultants",
+    "avgSatisfaction": "Avg Satisfaction",
+    "detailedAnalytics": "Detailed Analytics",
+    "analyticsComingSoon": "Advanced analytics features coming soon!"
+  },
+  "visit": {
+    "visitDetails": "Visit Details",
+    "notFound": "Visit not found",
+    "details": "Details",
+    "visitDate": "Visit Date",
+    "consultant": "Consultant",
+    "source": "Source",
+    "duration": "Duration",
+    "quality": "Quality",
+    "consultantNotes": "Consultant Notes",
+    "visitInfo": "Visit Information",
+    "status": {
+      "new": "New",
+      "contacted": "Contacted",
+      "scheduled": "Scheduled",
+      "test_drive": "Test Drive",
+      "negotiating": "Negotiating",
+      "completed": "Completed",
+      "lost": "Lost"
+    }
+  },
+  "customer": {
+    "information": "Customer Information",
+    "name": "Name",
+    "phone": "Phone",
+    "language": "Language"
+  },
+  "vehicle": {
+    "interest": "Vehicle Interest",
+    "type": "Type",
+    "brand": "Brand",
+    "model": "Model",
+    "budget": "Budget",
+    "timeline": "Timeline",
+    "financing": "Financing",
+    "features": "Features"
+  },
+  "common": {
+    "back": "Back",
+    "refresh": "Refresh",
+    "contact": "Contact",
+    "view": "View",
+    "loading": "Loading",
+    "today": "Today",
+    "week": "Week",
+    "month": "Month",
+    "quarter": "Quarter",
+    "year": "Year",
+    "never": "Never",
+    "unassigned": "Unassigned",
+    "walkIn": "Walk-in",
+    "minutes": "minutes"
+  },
+  "charts": {
+    "visitTrends": "Visit Trends",
+    "conversionFunnel": "Conversion Funnel",
+    "consultantPerformance": "Consultant Performance",
+    "vehicleInterest": "Vehicle Interest"
+  },
+  "app": {
+    "name": "Dealership Intelligence"
+  }
+}

@@ -1,0 +1,110 @@
+@import '@mantine/core/styles.css';
+@import '@mantine/notifications/styles.css';
+@import '@mantine/dates/styles.css';
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--mantine-color-gray-0);
+}
+
+/* Arabic RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .mantine-Stack-root,
+[dir="rtl"] .mantine-Group-root {
+  direction: rtl;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea {
+  text-align: right;
+}
+
+/* Touch-friendly interface for tablets */
+@media (hover: none) and (pointer: coarse) {
+  .mantine-Button-root {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .mantine-TextInput-input,
+  .mantine-Select-input,
+  .mantine-NumberInput-input {
+    min-height: 44px;
+  }
+}
+
+/* High contrast mode for better visibility */
+@media (prefers-contrast: high) {
+  .mantine-Card-root {
+    border: 2px solid var(--mantine-color-dark-4);
+  }
+}
+
+/* Loading animation */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Offline indicator */
+.offline-indicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--mantine-color-red-6);
+  color: white;
+  text-align: center;
+  padding: 8px;
+  z-index: 1000;
+  font-size: 14px;
+}
+
+/* Custom form styles for better Jordan mobile experience */
+.intake-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.intake-form .mantine-TextInput-root,
+.intake-form .mantine-Select-root,
+.intake-form .mantine-NumberInput-root {
+  margin-bottom: 1rem;
+}
+
+/* Arabic number formatting */
+.arabic-numbers {
+  font-feature-settings: "lnum" 0;
+  font-variant-numeric: normal;
+}
+
+/* Responsive design for Jordan 3G networks */
+@media (max-width: 768px) {
+  .mantine-Container-root {
+    padding: 0 1rem;
+  }
+  
+  .intake-form {
+    padding: 1rem;
+  }
+}
