@@ -222,8 +222,9 @@ export function ConsultantPerformanceChart({
         </Group>
 
         {/* Chart */}
-        <div style={{ width: '100%', height: 400 }}>
-          <ResponsiveContainer>
+        <div className="mobile-scroll-container">
+          <div style={{ width: '100%', minWidth: '500px', height: 400 }}>
+            <ResponsiveContainer>
             {chartType === 'radar' ? (
               <RadarChart data={radarData}>
                 <PolarGrid />
@@ -284,6 +285,7 @@ export function ConsultantPerformanceChart({
               </BarChart>
             )}
           </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Top Performers Table */}

@@ -5,7 +5,6 @@ import {
   Title,
   TextInput,
   Select,
-  Textarea,
   Button,
   Stack,
   Group,
@@ -523,10 +522,11 @@ export function CustomerIntakeForm() {
                   {...form.getInputProps('source')}
                 />
                 
-                <Textarea
+                <TextInput
                   label={t('form.notes')}
                   placeholder={t('dashboard.additionalNotes', 'Any additional notes or special requests...')}
                   leftSection={<IconNotes size={18} />}
+                  multiline
                   rows={4}
                   {...form.getInputProps('notes')}
                 />

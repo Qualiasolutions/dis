@@ -14,7 +14,6 @@ import {
   TextInput,
   Select,
   Modal,
-  Textarea,
   Progress,
   Timeline,
   ThemeIcon,
@@ -212,7 +211,8 @@ export function AssignedCustomersList({
   return (
     <div ref={tableRef}>
       <Card className="overflow-visible shadow-clean-lg">
-        <Table horizontalSpacing="md" verticalSpacing="md" striped highlightOnHover>
+        <div className="mobile-scroll-container">
+          <Table horizontalSpacing="md" verticalSpacing="md" striped highlightOnHover>
           <Table.Thead>
             <Table.Tr>
               <Table.Th></Table.Th>
@@ -473,6 +473,7 @@ export function AssignedCustomersList({
             })}
           </Table.Tbody>
         </Table>
+        </div>
       </Card>
 
       {/* Quick Action Modals */}
@@ -500,8 +501,9 @@ export function AssignedCustomersList({
             {actionType === 'call' && (
               <>
                 <Text size="sm" c="dimmed">{t('dashboard.callNotes', 'Call Notes')}</Text>
-                <Textarea
+                <TextInput
                   placeholder={t('dashboard.callNotesPlaceholder', 'Enter notes about the call...')}
+                  multiline
                   rows={4}
                 />
                 <AnimatedButton
@@ -519,9 +521,10 @@ export function AssignedCustomersList({
                   label={t('dashboard.subject', 'Subject')}
                   placeholder={t('dashboard.emailSubject', 'Email subject...')}
                 />
-                <Textarea
+                <TextInput
                   label={t('dashboard.message', 'Message')}
                   placeholder={t('dashboard.emailMessage', 'Email message...')}
+                  multiline
                   rows={6}
                 />
                 <AnimatedButton
@@ -543,9 +546,10 @@ export function AssignedCustomersList({
                   label={t('dashboard.dateTime', 'Date & Time')}
                   placeholder={t('dashboard.selectDateTime', 'Select date and time')}
                 />
-                <Textarea
+                <TextInput
                   label={t('form.notes')}
                   placeholder={t('dashboard.appointmentNotes', 'Additional notes...')}
+                  multiline
                   rows={3}
                 />
                 <AnimatedButton

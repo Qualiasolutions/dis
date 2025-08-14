@@ -74,6 +74,21 @@ export function VehicleInterestChart({ visits, timeRange, loading = false }: Veh
   const [chartType, setChartType] = useState<ChartType>('donut')
   const [dataType, setDataType] = useState<DataType>('type')
 
+  const getIconForCategory = (category: DataType, name: string) => {
+    switch (category) {
+      case 'type':
+        return <IconCar size={16} />
+      case 'brand':
+        return <IconCar size={16} />
+      case 'budget':
+        return <IconCurrencyDollar size={16} />
+      case 'transmission':
+        return <IconEngine size={16} />
+      default:
+        return <IconCar size={16} />
+    }
+  }
+
   const chartData = useMemo(() => {
     if (visits.length === 0) return []
 
@@ -114,21 +129,6 @@ export function VehicleInterestChart({ visits, timeRange, loading = false }: Veh
       }))
       .sort((a, b) => b.value - a.value)
   }, [visits, dataType])
-
-  const getIconForCategory = (category: DataType, name: string) => {
-    switch (category) {
-      case 'type':
-        return <IconCar size={16} />
-      case 'brand':
-        return <IconCar size={16} />
-      case 'budget':
-        return <IconCurrencyDollar size={16} />
-      case 'transmission':
-        return <IconEngine size={16} />
-      default:
-        return <IconCar size={16} />
-    }
-  }
 
   const topCategories = useMemo(() => {
     return chartData.slice(0, 5)
@@ -190,8 +190,9 @@ export function VehicleInterestChart({ visits, timeRange, loading = false }: Veh
 
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="lg">
           {/* Chart */}
-          <div style={{ width: '100%', height: 350 }}>
-            <ResponsiveContainer>
+          <div className="mobile-scroll-container">
+            <div style={{ width: '100%', minWidth: '400px', height: 350 }}>
+              <ResponsiveContainer>
               {chartType === 'bar' ? (
                 <BarChart data={chartData.slice(0, 8)}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
@@ -256,6 +257,7 @@ export function VehicleInterestChart({ visits, timeRange, loading = false }: Veh
                 </PieChart>
               )}
             </ResponsiveContainer>
+            </div>
           </div>
 
           {/* Statistics */}

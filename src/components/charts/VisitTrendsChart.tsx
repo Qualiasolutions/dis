@@ -245,8 +245,9 @@ export function VisitTrendsChart({ visits, timeRange, loading = false }: VisitTr
         </Group>
 
         {/* Chart */}
-        <div style={{ width: '100%', height: 300 }}>
-          <ResponsiveContainer>
+        <div className="mobile-scroll-container">
+          <div style={{ width: '100%', minWidth: '400px', height: 300 }}>
+            <ResponsiveContainer>
             <ChartComponent data={chartData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
               <XAxis 
@@ -294,6 +295,7 @@ export function VisitTrendsChart({ visits, timeRange, loading = false }: VisitTr
               )}
             </ChartComponent>
           </ResponsiveContainer>
+          </div>
         </div>
 
         {/* Summary Stats */}

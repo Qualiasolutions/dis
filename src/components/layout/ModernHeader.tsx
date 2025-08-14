@@ -142,40 +142,50 @@ export function ModernHeader() {
         }
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 mobile-container">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo Section */}
           <div 
-            className="flex items-center space-x-4 rtl:space-x-reverse cursor-pointer"
+            className="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse cursor-pointer flex-shrink-0"
             onMouseEnter={handleLogoHover}
             onMouseLeave={handleLogoLeave}
           >
             <div ref={logoRef} className="flex items-center transform-gpu">
-              <TahboubLogo size={48} className="drop-shadow-md" />
-              <div className={`border-l border-dealership-border h-8 ${isRTL ? 'ml-4 mr-4' : 'mr-4 ml-4'}`}></div>
+              <TahboubLogo size={40} className="sm:w-12 sm:h-12 drop-shadow-md" />
+              <div className={`hidden sm:block border-l border-dealership-border h-8 ${isRTL ? 'ml-4 mr-4' : 'mr-4 ml-4'}`}></div>
             </div>
-            <div className="overflow-hidden">
-              <h1 className="text-xl font-bold text-dealership-black transform transition-transform hover:scale-105">
+            <div className="overflow-hidden hidden sm:block">
+              <h1 className="text-lg sm:text-xl font-bold text-dealership-black transform transition-transform hover:scale-105">
                 {language === 'ar' ? 'نظام طهبوب للسيارات' : 'Tahboub Automotive'}
               </h1>
               <p className="text-xs text-dealership-dark-text -mt-1 opacity-80">
                 {language === 'ar' ? 'نظام إدارة المبيعات' : 'Dealership Management'}
               </p>
             </div>
+            {/* Mobile-only title */}
+            <div className="sm:hidden">
+              <h1 className="text-sm font-bold text-dealership-black">
+                {language === 'ar' ? 'طهبوب' : 'Tahboub'}
+              </h1>
+            </div>
           </div>
 
           {/* Navigation */}
-          <div ref={navRef} className="flex-1 flex justify-center px-8">
+          <div ref={navRef} className="hidden lg:flex flex-1 justify-center px-8">
             <ModernNavigation />
           </div>
 
           {/* Right Section */}
-          <div ref={rightSectionRef} className="flex items-center space-x-4 rtl:space-x-reverse">
-            <div className="transform transition-all hover:scale-105">
+          <div ref={rightSectionRef} className="flex items-center space-x-2 sm:space-x-4 rtl:space-x-reverse flex-shrink-0">
+            <div className="hidden sm:block transform transition-all hover:scale-105">
               <LanguageToggle />
             </div>
-            <div className="transform transition-all hover:scale-105">
+            <div className="hidden sm:block transform transition-all hover:scale-105">
               <UserMenu />
+            </div>
+            {/* Mobile Navigation Toggle */}
+            <div className="lg:hidden">
+              <ModernNavigation />
             </div>
           </div>
         </div>

@@ -22,6 +22,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--mantine-color-gray-0);
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Arabic RTL Support */
@@ -102,13 +104,66 @@ body {
   font-variant-numeric: normal;
 }
 
+/* Mobile overflow prevention */
+html, body, #root {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Mobile responsive containers */
+.mobile-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Mobile scroll container for wide content */
+.mobile-scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mobile-scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.mobile-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.mobile-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.mobile-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 /* Responsive design for Jordan 3G networks */
 @media (max-width: 768px) {
   .mantine-Container-root {
     padding: 0 1rem;
+    max-width: 100vw;
+    overflow-x: hidden;
   }
   
   .intake-form {
     padding: 1rem;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  /* Prevent horizontal overflow on mobile */
+  .max-w-7xl {
+    max-width: 100vw !important;
+  }
+
+  /* Mobile-specific spacing */
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
   }
 }

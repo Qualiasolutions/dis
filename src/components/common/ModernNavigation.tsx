@@ -233,16 +233,16 @@ export function ModernNavigation() {
           />
           <nav
             ref={mobileMenuRef}
-            className={`fixed ${isRTL ? 'left-0' : 'right-0'} top-0 h-full w-80 bg-white shadow-2xl z-50 lg:hidden transform-gpu`}
+            className={`fixed ${isRTL ? 'left-0' : 'right-0'} top-0 h-full w-72 sm:w-80 bg-white shadow-2xl z-50 lg:hidden transform-gpu max-w-[85vw]`}
           >
-            <div className="p-6">
-              <div className="flex justify-between items-center mb-8">
-                <h2 className="text-xl font-bold text-dealership-black">{t('navigation.menu', 'Menu')}</h2>
+            <div className="p-4 sm:p-6">
+              <div className="flex justify-between items-center mb-6 sm:mb-8">
+                <h2 className="text-lg sm:text-xl font-bold text-dealership-black">{t('navigation.menu', 'Menu')}</h2>
                 <button
                   onClick={closeMobileMenu}
-                  className="p-2 rounded-lg text-dealership-dark-text hover:bg-dealership-gray transition-all transform hover:scale-105 hover:rotate-90"
+                  className="p-2 rounded-lg text-dealership-dark-text hover:bg-dealership-gray transition-all transform hover:scale-105 hover:rotate-90 min-w-[44px] min-h-[44px] flex items-center justify-center"
                 >
-                  <IconX size={24} />
+                  <IconX size={20} />
                 </button>
               </div>
               <div className="space-y-2">
@@ -252,7 +252,7 @@ export function ModernNavigation() {
                     to={item.path}
                     onClick={closeMobileMenu}
                     className={`
-                      mobile-nav-item flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 transform-gpu
+                      mobile-nav-item flex items-center gap-3 px-3 sm:px-4 py-3 rounded-lg transition-all duration-300 transform-gpu min-h-[44px]
                       ${isActive(item.path) 
                         ? 'text-dealership-black bg-dealership-light' 
                         : 'text-dealership-dark-text hover:text-dealership-black hover:bg-dealership-gray'
@@ -269,14 +269,14 @@ export function ModernNavigation() {
               
               {/* User info in mobile menu */}
               {isAuthenticated() && user && (
-                <div className="mt-8 pt-8 border-t border-dealership-border">
-                  <div className="flex items-center gap-3 px-4 py-3 bg-dealership-light rounded-lg">
-                    <IconUser size={20} className="text-dealership-dark-text" />
-                    <div>
-                      <p className="font-medium text-dealership-black text-sm">
+                <div className="mt-6 sm:mt-8 pt-6 sm:pt-8 border-t border-dealership-border">
+                  <div className="flex items-center gap-3 px-3 sm:px-4 py-3 bg-dealership-light rounded-lg">
+                    <IconUser size={20} className="text-dealership-dark-text flex-shrink-0" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-medium text-dealership-black text-sm truncate">
                         {user.name || user.email}
                       </p>
-                      <p className="text-xs text-dealership-text">
+                      <p className="text-xs text-dealership-text truncate">
                         {t(`roles.${user.user_role}`, user.user_role)}
                       </p>
                     </div>

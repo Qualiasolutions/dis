@@ -578,8 +578,9 @@ export function ConsultantDashboard() {
           <Text size="sm" c="dimmed">
             {selectedVisitForNotes?.customer?.name}
           </Text>
-          <Textarea
+          <TextInput
             placeholder={t('form.notes')}
+            multiline
             rows={4}
             onChange={(e) => console.log(e.currentTarget.value)}
           />

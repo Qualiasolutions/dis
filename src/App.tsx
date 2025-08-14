@@ -38,10 +38,10 @@ function App() {
 
   return (
     <>
-      <div className="min-h-screen bg-dealership-light">
+      <div className="min-h-screen bg-dealership-light mobile-container">
         <ModernHeader />
           
-          <main className="pt-20">
+          <main className="pt-16 sm:pt-20 mobile-container">
             <PageTransition>
               <Routes>
                 <Route path="/" element={<SimpleHomePage />} />
@@ -50,7 +50,7 @@ function App() {
                   path="/intake" 
                   element={
                     <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 mobile-container" data-animate>
                         <CustomerIntakeForm />
                       </div>
                     </ProtectedRoute>
@@ -60,7 +60,7 @@ function App() {
                   path="/queue" 
                   element={
                     <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 mobile-container" data-animate>
                         <ReceptionQueue />
                       </div>
                     </ProtectedRoute>
@@ -70,7 +70,7 @@ function App() {
                   path="/consultant" 
                   element={
                     <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 mobile-container" data-animate>
                         <ConsultantDashboard />
                       </div>
                     </ProtectedRoute>
@@ -80,7 +80,7 @@ function App() {
                   path="/dashboard" 
                   element={
                     <ProtectedRoute requiredRole={['manager', 'admin']}>
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 mobile-container" data-animate>
                         <AnalyticsDashboard />
                       </div>
                     </ProtectedRoute>
@@ -90,7 +90,7 @@ function App() {
                   path="/profile" 
                   element={
                     <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                      <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-6 sm:py-8 mobile-container" data-animate>
                         <UserProfile />
                       </div>
                     </ProtectedRoute>

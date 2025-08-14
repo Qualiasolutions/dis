@@ -23,7 +23,6 @@ import {
   Tooltip,
   Modal,
   TextInput,
-  Textarea,
   NumberInput,
   Indicator,
   Avatar,

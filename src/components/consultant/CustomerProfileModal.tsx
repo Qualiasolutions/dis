@@ -6,7 +6,7 @@ import {
   Text,
   Badge,
   Button,
-  Textarea,
+  TextInput,
   Select,
   Divider,
   Avatar,
@@ -314,9 +314,10 @@ export function CustomerProfileModal({
               </div>
             )}
             
-            <Textarea
+            <TextInput
               label="Consultant Notes"
               placeholder="Add your consultation notes, observations, and next steps..."
+              multiline
               minRows={4}
               {...form.getInputProps('consultantNotes')}
             />
