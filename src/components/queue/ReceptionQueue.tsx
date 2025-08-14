@@ -50,13 +50,10 @@ import {
   IconEye,
   IconRobot,
   IconBrain,
+  IconLightningBolt,
   IconDashboard,
   IconCalendarStats,
   IconUserPlus,
-  IconCheck,
-  IconUser,
-  IconPhone,
-  IconCar,
 } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { notifications } from '@mantine/notifications'
@@ -356,7 +353,7 @@ export function ReceptionQueue() {
             {autoAssignMode && (
               <AnimatedButton
                 size="sm"
-                leftSection={<IconBolt size={16} />}
+                leftSection={<IconLightningBolt size={16} />}
                 onClick={handleAutoAssign}
                 color="violet"
               >

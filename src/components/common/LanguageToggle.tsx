@@ -1,148 +1,92 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLanguageStore } from '../../stores/languageStore'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import { IconLanguage } from '@tabler/icons-react'
 
 export function LanguageToggle() {
   const { language, setLanguage } = useLanguageStore()
   const { t } = useTranslation()
+  const containerRef = useRef<HTMLDivElement>(null)
   const toggleRef = useRef<HTMLDivElement>(null)
-  const sliderRef = useRef<HTMLDivElement>(null)
-  const arButtonRef = useRef<HTMLButtonElement>(null)
-  const enButtonRef = useRef<HTMLButtonElement>(null)
-  const isInitialized = useRef(false)
 
-  // Animate slider position based on language
-  useEffect(() => {
-    if (!sliderRef.current || !arButtonRef.current || !enButtonRef.current || !toggleRef.current) return
-    
-    const targetButton = language === 'ar' ? arButtonRef.current : enButtonRef.current
-    const rect = targetButton.getBoundingClientRect()
-    const containerRect = toggleRef.current.getBoundingClientRect()
-    
-    // Calculate relative position within the container
-    const relativeLeft = rect.left - containerRect.left - 1 // Subtract 1px for the padding
-    
-    if (!isInitialized.current) {
-      // Set initial position without animation
-      gsap.set(sliderRef.current, {
-        x: relativeLeft,
-        width: rect.width,
-      })
-      isInitialized.current = true
-    } else {
-      // Animate to new position
-      gsap.to(sliderRef.current, {
-        x: relativeLeft,
-        width: rect.width,
-        duration: 0.5,
-        ease: "power2.inOut"
-      })
-    }
-  }, [language])
-
+  // Simple toggle animation
   useGSAP(() => {
-    if (!toggleRef.current) return
+    if (!containerRef.current) return
     
-    // Initial animation
-    gsap.fromTo(toggleRef.current,
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }
+    // Initial fade in
+    gsap.fromTo(containerRef.current,
+      { opacity: 0, y: -10 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
     )
-  }, { scope: toggleRef })
+  }, { scope: containerRef })
 
-  const handleLanguageChange = (newLanguage: 'ar' | 'en') => {
-    if (language === newLanguage) return
+  const handleLanguageChange = () => {
+    const newLanguage = language === 'ar' ? 'en' : 'ar'
     
     // Animate the toggle
-    const tl = gsap.timeline()
-    
-    // Scale down current button
-    const currentButton = language === 'ar' ? arButtonRef.current : enButtonRef.current
-    const newButton = newLanguage === 'ar' ? arButtonRef.current : enButtonRef.current
-    
-    if (currentButton && newButton) {
-      tl.to(currentButton, {
-        scale: 0.95,
-        duration: 0.1
-      })
-      .to(newButton, {
-        scale: 1.05,
-        duration: 0.1
-      }, "-=0.05")
-      .to(newButton, {
-        scale: 1,
-        duration: 0.2,
-        ease: "power2.out"
+    if (toggleRef.current) {
+      gsap.to(toggleRef.current, {
+        scale: 0.9,
+        duration: 0.1,
+        yoyo: true,
+        repeat: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          setLanguage(newLanguage)
+        }
       })
     }
-    
-    // Rotate icon
-    const icon = toggleRef.current?.querySelector('.language-icon')
-    if (icon) {
-      gsap.to(icon, {
-        rotation: 360,
-        duration: 0.5,
-        ease: "power2.out"
-      })
-    }
-    
-    setLanguage(newLanguage)
   }
 
   return (
     <div 
-      ref={toggleRef}
-      className="relative inline-flex items-center gap-2 bg-dealership-light rounded-lg p-1 shadow-clean"
+      ref={containerRef}
+      className="flex items-center gap-2"
     >
-      {/* Language icon */}
-      <IconLanguage 
-        size={20} 
-        className="language-icon text-dealership-dark-text mx-2 transform-gpu" 
-      />
-      
-      {/* Sliding background */}
-      <div 
-        ref={sliderRef}
-        className="absolute top-1 h-8 bg-dealership-black rounded-md pointer-events-none"
-        style={{ 
-          opacity: 0.9,
-          left: 0,
-          transform: 'translateX(0)',
-          zIndex: 1
-        }}
-      />
-      
-      {/* Language buttons */}
+      {/* Simple toggle button */}
       <button
-        ref={arButtonRef}
-        onClick={() => handleLanguageChange('ar')}
-        className={`
-          relative z-10 px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 transform-gpu
-          ${language === 'ar' 
-            ? 'text-white' 
-            : 'text-dealership-dark-text hover:text-dealership-black'
-          }
-        `}
+        ref={toggleRef}
+        onClick={handleLanguageChange}
+        className="relative flex items-center bg-dealership-light hover:bg-dealership-gray border border-dealership-border rounded-full p-1 transition-all duration-200 overflow-hidden transform-gpu"
+        aria-label="Toggle language"
       >
-        {t('language.arabic')}
+        {/* Toggle track */}
+        <div className="relative flex items-center w-20 h-8">
+          {/* Toggle thumb */}
+          <div 
+            className={`
+              absolute w-10 h-6 bg-dealership-black rounded-full shadow-sm transition-transform duration-300 ease-in-out
+              ${language === 'ar' ? 'translate-x-0' : 'translate-x-9'}
+            `}
+          />
+          
+          {/* Language labels */}
+          <div className="relative z-10 w-full flex items-center justify-between px-2 pointer-events-none">
+            <span 
+              className={`
+                text-xs font-medium transition-colors duration-300
+                ${language === 'ar' ? 'text-white' : 'text-dealership-dark-text'}
+              `}
+            >
+              ع
+            </span>
+            <span 
+              className={`
+                text-xs font-medium transition-colors duration-300
+                ${language === 'en' ? 'text-white' : 'text-dealership-dark-text'}
+              `}
+            >
+              EN
+            </span>
+          </div>
+        </div>
       </button>
       
-      <button
-        ref={enButtonRef}
-        onClick={() => handleLanguageChange('en')}
-        className={`
-          relative z-10 px-3 py-1.5 rounded-md text-sm font-medium transition-colors duration-300 transform-gpu
-          ${language === 'en' 
-            ? 'text-white' 
-            : 'text-dealership-dark-text hover:text-dealership-black'
-          }
-        `}
-      >
-        {t('language.english')}
-      </button>
+      {/* Current language text (optional) */}
+      <span className="text-sm text-dealership-dark-text hidden sm:inline">
+        {language === 'ar' ? 'العربية' : 'English'}
+      </span>
     </div>
   )
 }
