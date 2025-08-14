@@ -10,6 +10,7 @@ export function EnhancedHomePage() {
   const { t } = useTranslation()
   const { isAuthenticated, isConsultant, isManager } = useAuthStore()
 
+  // Auto-deploy test: Updated on 2025-01-14
   const quickActions = [
     {
       title: t('navigation.intake', 'Customer Intake'),
@@ -84,6 +85,9 @@ export function EnhancedHomePage() {
         </Title>
         <Text size="lg" c="dimmed" maw={600} mx="auto">
           {t('welcome.description', 'نظام ذكي لإدارة المعارض وتتبع العملاء باستخدام الذكاء الاصطناعي')}
+        </Text>
+        <Text size="xs" c="green" mt="sm">
+          ✅ Auto-Deploy Active - Last Update: {new Date().toLocaleString('ar-JO')}
         </Text>
       </div>
 
