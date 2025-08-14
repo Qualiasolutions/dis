@@ -38,6 +38,7 @@ import {
   IconUserCheck,
   IconAlertCircle,
   IconFilter,
+  IconCheck,
   IconBolt,
   IconSparkles,
   IconChartBar,
