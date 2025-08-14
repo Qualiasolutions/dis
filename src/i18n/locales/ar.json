@@ -1,8 +1,11 @@
 {
-  "welcome": {
-    "title": "مرحباً بكم في نظام ذكاء التاجر",
-    "description": "نظام ذكي لإدارة المعارض وتتبع العملاء باستخدام الذكاء الاصطناعي"
-  },
+  "welcome": "مرحباً",
+  "Tahboub Automotive": "طهبوب للسيارات",
+  "Dealership Management System": "نظام إدارة المعرض",
+  "Choose your workspace": "اختر مساحة العمل",
+  "Enter System": "دخول النظام", 
+  "Sign In": "تسجيل الدخول",
+  "Internal use only - Authorized personnel": "للاستخدام الداخلي فقط - الأشخاص المخولون",
   "navigation": {
     "home": "الرئيسية",
     "intake": "استمارة العميل",

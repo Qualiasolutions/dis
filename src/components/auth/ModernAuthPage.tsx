@@ -6,13 +6,13 @@ import {
   IconLock, 
   IconMail, 
   IconPhone,
-  IconSparkles,
   IconArrowRight,
   IconEye,
   IconEyeOff
 } from '@tabler/icons-react'
 import { useAuthStore } from '../../stores/authStore'
 import { notifications } from '@mantine/notifications'
+import { TahboubLogo } from '../common/TahboubLogo'
 import '../../styles/modern-theme.css'
 
 export function ModernAuthPage() {
@@ -133,11 +133,8 @@ export function ModernAuthPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-2xl blur-2xl opacity-50 animate-pulse-glow" />
-              <div className="relative bg-gradient-to-r from-blue-600 to-violet-600 p-4 rounded-2xl">
-                <IconSparkles size={40} className="text-white" />
-              </div>
+            <div className="bg-dealership-white p-4 rounded-lg shadow-clean">
+              <TahboubLogo size={60} />
             </div>
           </motion.div>
 

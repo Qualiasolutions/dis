@@ -21,6 +21,7 @@ import { createVisit, queueVisitForSync } from '../../lib/supabase'
 import { useFormValidation } from '../../hooks/useFormValidation'
 import { useConnectionStatus } from '../../hooks/useConnectionStatus'
 import { ConnectionStatus } from '../common/ConnectionStatus'
+import { TahboubLogo } from '../common/TahboubLogo'
 
 interface CustomerFormData {
   name: string
@@ -179,9 +180,12 @@ export function CustomerIntakeForm() {
           <LoadingOverlay visible={loading || isSyncing} />
           
           <Group justify="space-between" align="center" mb="xl">
-            <Title order={2}>
-              {t('form.customer_info')}
-            </Title>
+            <Group gap="md">
+              <TahboubLogo size={32} />
+              <Title order={2}>
+                {t('form.customer_info')}
+              </Title>
+            </Group>
             
             <Badge
               color={isOnline ? 'green' : 'orange'}

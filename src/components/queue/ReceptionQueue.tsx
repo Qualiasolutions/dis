@@ -28,6 +28,7 @@ import { notifications } from '@mantine/notifications'
 import { QueueCard } from './QueueCard'
 import { useQueueStore } from '../../stores/queueStore'
 import { useConsultantsStore } from '../../stores/consultantsStore'
+import { TahboubLogo } from '../common/TahboubLogo'
 
 export function ReceptionQueue() {
   const { t } = useTranslation()
@@ -138,9 +139,12 @@ export function ReceptionQueue() {
     <Container size="xl">
       {/* Header */}
       <Group justify="space-between" mb="xl">
-        <Title order={2}>
-          {t('navigation.dashboard')} - Reception Queue
-        </Title>
+        <Group gap="md">
+          <TahboubLogo size={36} />
+          <Title order={2}>
+            {t('navigation.dashboard')} - Reception Queue
+          </Title>
+        </Group>
         
         <Group>
           <Button

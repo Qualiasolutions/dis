@@ -1,8 +1,11 @@
 {
-  "welcome": {
-    "title": "Welcome to Dealership Intelligence System",
-    "description": "AI-powered system for dealership management and customer tracking"
-  },
+  "welcome": "Welcome",
+  "Tahboub Automotive": "Tahboub Automotive",
+  "Dealership Management System": "Dealership Management System", 
+  "Choose your workspace": "Choose your workspace",
+  "Enter System": "Enter System",
+  "Sign In": "Sign In",
+  "Internal use only - Authorized personnel": "Internal use only - Authorized personnel",
   "navigation": {
     "home": "Home",
     "intake": "Customer Intake",

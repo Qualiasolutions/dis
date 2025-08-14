@@ -4,7 +4,7 @@ import { useLanguageStore } from '../../stores/languageStore'
 import { ModernNavigation } from '../common/ModernNavigation'
 import { LanguageToggle } from '../common/LanguageToggle'
 import { UserMenu } from '../auth/UserMenu'
-import { IconSparkles } from '@tabler/icons-react'
+import { TahboubLogo } from '../common/TahboubLogo'
 import '../../styles/modern-theme.css'
 
 export function ModernHeader() {
@@ -27,8 +27,8 @@ export function ModernHeader() {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${scrolled 
-          ? 'glass-morphism shadow-lg' 
-          : 'bg-transparent'
+          ? 'bg-dealership-white/95 backdrop-blur-sm border-b border-dealership-medium shadow-clean' 
+          : 'bg-dealership-white/80 backdrop-blur-sm'
         }
       `}
     >
@@ -36,24 +36,20 @@ export function ModernHeader() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-3"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="flex items-center space-x-4"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600 rounded-xl blur-xl opacity-50 animate-pulse-glow" />
-              <div className="relative bg-gradient-to-r from-blue-600 to-violet-600 p-2 rounded-xl">
-                <IconSparkles size={28} className="text-white" />
-              </div>
+            <div className="flex items-center">
+              <TahboubLogo size={48} className="mr-4" />
+              <div className="border-l border-dealership-border h-8 mr-4"></div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold">
-                <span className="gradient-text animate-gradient bg-gradient-to-r from-blue-600 via-violet-600 to-blue-600">
-                  {language === 'ar' ? 'نظام طهبوب' : 'Tahboub DIS'}
-                </span>
+              <h1 className="text-xl font-bold text-dealership-black">
+                {language === 'ar' ? 'نظام طهبوب للسيارات' : 'Tahboub Automotive'}
               </h1>
-              <p className="text-xs text-gray-600 -mt-1">
-                {language === 'ar' ? 'الذكاء الاصطناعي' : 'AI-Powered'}
+              <p className="text-xs text-dealership-dark-text -mt-1">
+                {language === 'ar' ? 'نظام إدارة المبيعات' : 'Dealership Management'}
               </p>
             </div>
           </motion.div>

@@ -1,9 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
-import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { queryClient } from './lib/queryClient'
 
 import { useLanguageStore } from './stores/languageStore'
 import { useAuthStore } from './stores/authStore'
@@ -16,7 +14,7 @@ import { ReceptionQueue } from './components/queue/ReceptionQueue'
 import { ConsultantDashboard } from './components/consultant/ConsultantDashboard'
 import { AnalyticsDashboard } from './components/analytics/AnalyticsDashboard'
 import { UserProfile } from './components/profile/UserProfile'
-import { ProfessionalHomePage } from './components/layout/ProfessionalHomePage'
+import { SimpleHomePage } from './components/layout/SimpleHomePage'
 import './styles/modern-theme.css'
 
 function App() {
@@ -38,70 +36,70 @@ function App() {
   }, [language, i18n])
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="min-h-screen bg-gray-50">
+    <>
+      <div className="min-h-screen bg-dealership-light">
         <ModernHeader />
-        
-        <main className="pt-20">
-          <Routes>
-            <Route path="/" element={<ProfessionalHomePage />} />
-            <Route path="/auth" element={<ModernAuthPage />} />
-            <Route 
-              path="/intake" 
-              element={
-                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <CustomerIntakeForm />
-                  </div>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/queue" 
-              element={
-                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <ReceptionQueue />
-                  </div>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/consultant" 
-              element={
-                <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <ConsultantDashboard />
-                  </div>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/dashboard" 
-              element={
-                <ProtectedRoute requiredRole={['manager', 'admin']}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <AnalyticsDashboard />
-                  </div>
-                </ProtectedRoute>
-              } 
-            />
-            <Route 
-              path="/profile" 
-              element={
-                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                    <UserProfile />
-                  </div>
-                </ProtectedRoute>
-              } 
-            />
-          </Routes>
-        </main>
+          
+          <main className="pt-20">
+            <Routes>
+              <Route path="/" element={<SimpleHomePage />} />
+              <Route path="/auth" element={<ModernAuthPage />} />
+              <Route 
+                path="/intake" 
+                element={
+                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                      <CustomerIntakeForm />
+                    </div>
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/queue" 
+                element={
+                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                      <ReceptionQueue />
+                    </div>
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/consultant" 
+                element={
+                  <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                      <ConsultantDashboard />
+                    </div>
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/dashboard" 
+                element={
+                  <ProtectedRoute requiredRole={['manager', 'admin']}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                      <AnalyticsDashboard />
+                    </div>
+                  </ProtectedRoute>
+                } 
+              />
+              <Route 
+                path="/profile" 
+                element={
+                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                      <UserProfile />
+                    </div>
+                  </ProtectedRoute>
+                } 
+              />
+            </Routes>
+          </main>
       </div>
       <PWAUpdater />
       <ReactQueryDevtools initialIsOpen={false} />
-    </QueryClientProvider>
+    </>
   )
 }
 
