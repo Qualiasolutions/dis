@@ -54,6 +54,7 @@ import {
   IconCalendarStats,
   IconUserPlus,
   IconCheck,
+  IconUser,
 } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
 import { notifications } from '@mantine/notifications'
