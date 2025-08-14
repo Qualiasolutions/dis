@@ -1,32 +1,27 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useEffect } from 'react'
-import { AppShell, Container, Title, Text, Stack, Button, Group } from '@mantine/core'
-import { IconUserPlus, IconUsers, IconUserCheck } from '@tabler/icons-react'
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { queryClient } from './lib/queryClient'
 
 import { useLanguageStore } from './stores/languageStore'
 import { useAuthStore } from './stores/authStore'
-import { LanguageToggle } from './components/common/LanguageToggle'
-import { Navigation } from './components/common/Navigation'
-import { UserMenu } from './components/auth/UserMenu'
-import { AuthPage } from './components/auth/AuthPage'
+import { ModernHeader } from './components/layout/ModernHeader'
+import { ModernAuthPage } from './components/auth/ModernAuthPage'
 import { ProtectedRoute } from './components/auth/ProtectedRoute'
 import { CustomerIntakeForm } from './components/forms/CustomerIntakeForm'
 import { PWAUpdater } from './components/common/PWAUpdater'
-import { ConnectionStatus } from './components/common/ConnectionStatus'
 import { ReceptionQueue } from './components/queue/ReceptionQueue'
 import { ConsultantDashboard } from './components/consultant/ConsultantDashboard'
 import { AnalyticsDashboard } from './components/analytics/AnalyticsDashboard'
 import { UserProfile } from './components/profile/UserProfile'
-import { EnhancedHomePage } from './components/layout/EnhancedHomePage'
-import { Footer } from './components/common/Footer'
+import { ProfessionalHomePage } from './components/layout/ProfessionalHomePage'
+import './styles/modern-theme.css'
 
 function App() {
   const { i18n } = useTranslation()
-  const { language, setLanguage } = useLanguageStore()
+  const { language } = useLanguageStore()
   const { initialize } = useAuthStore()
 
   // Initialize auth on app start
@@ -44,139 +39,69 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AppShell
-        header={{ height: 80 }}
-        padding="md"
-      >
-        <AppShell.Header>
-          <Container size="xl" h="100%" px="md">
-            <div style={{ 
-              display: 'flex', 
-              justifyContent: 'space-between', 
-              alignItems: 'center', 
-              height: '100%',
-              minHeight: '80px'
-            }}>
-              <Title order={2} c="blue.7">
-                {language === 'ar' ? 'نظام طهبوب الذكي' : 'Tahboub DIS'}
-              </Title>
-              
-              <Navigation />
-              
-              <Group>
-                <LanguageToggle />
-                <UserMenu />
-              </Group>
-            </div>
-          </Container>
-        </AppShell.Header>
-
-        <AppShell.Main>
-          <Container size="xl">
-            <Routes>
-              <Route path="/" element={<EnhancedHomePage />} />
-              <Route path="/auth" element={<AuthPage />} />
-              <Route 
-                path="/intake" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+      <div className="min-h-screen bg-gray-50">
+        <ModernHeader />
+        
+        <main className="pt-20">
+          <Routes>
+            <Route path="/" element={<ProfessionalHomePage />} />
+            <Route path="/auth" element={<ModernAuthPage />} />
+            <Route 
+              path="/intake" 
+              element={
+                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <CustomerIntakeForm />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/queue" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                  </div>
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/queue" 
+              element={
+                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <ReceptionQueue />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/consultant" 
-                element={
-                  <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
+                  </div>
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/consultant" 
+              element={
+                <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <ConsultantDashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/dashboard" 
-                element={
-                  <ProtectedRoute requiredRole={['manager', 'admin']}>
+                  </div>
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/dashboard" 
+              element={
+                <ProtectedRoute requiredRole={['manager', 'admin']}>
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <AnalyticsDashboard />
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/profile" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                  </div>
+                </ProtectedRoute>
+              } 
+            />
+            <Route 
+              path="/profile" 
+              element={
+                <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                     <UserProfile />
-                  </ProtectedRoute>
-                } 
-              />
-            </Routes>
-            <Footer />
-          </Container>
-        </AppShell.Main>
-      </AppShell>
+                  </div>
+                </ProtectedRoute>
+              } 
+            />
+          </Routes>
+        </main>
+      </div>
       <PWAUpdater />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
-  )
-}
-
-// Simple home page component
-function HomePage() {
-  const { t } = useTranslation()
-  const { isAuthenticated, isConsultant } = useAuthStore()
-  
-  return (
-    <Stack align="center" mt="xl" gap="xl">
-      <div>
-        <Title order={1} ta="center" mb="md">
-          {t('welcome.title')}
-        </Title>
-        <Text size="lg" ta="center" c="dimmed" maw={600}>
-          {t('welcome.description')}
-        </Text>
-      </div>
-      
-      <Group gap="lg">
-        <Button
-          component={Link}
-          to="/intake"
-          size="lg"
-          leftSection={<IconUserPlus size={20} />}
-        >
-          {t('navigation.intake')}
-        </Button>
-        
-        <Button
-          component={Link}
-          to="/queue"
-          size="lg"
-          variant="outline"
-          leftSection={<IconUsers size={20} />}
-        >
-          Reception Queue
-        </Button>
-        
-        {isAuthenticated() && isConsultant() && (
-          <Button
-            component={Link}
-            to="/consultant"
-            size="lg"
-            variant="gradient"
-            gradient={{ from: 'blue', to: 'cyan' }}
-            leftSection={<IconUserCheck size={20} />}
-          >
-            My Dashboard
-          </Button>
-        )}
-      </Group>
-    </Stack>
   )
 }
 
