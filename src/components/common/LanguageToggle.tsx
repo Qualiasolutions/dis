@@ -12,18 +12,30 @@ export function LanguageToggle() {
   const sliderRef = useRef<HTMLDivElement>(null)
   const arButtonRef = useRef<HTMLButtonElement>(null)
   const enButtonRef = useRef<HTMLButtonElement>(null)
+  const isInitialized = useRef(false)
 
   // Animate slider position based on language
   useEffect(() => {
-    if (!sliderRef.current || !arButtonRef.current || !enButtonRef.current) return
+    if (!sliderRef.current || !arButtonRef.current || !enButtonRef.current || !toggleRef.current) return
     
     const targetButton = language === 'ar' ? arButtonRef.current : enButtonRef.current
     const rect = targetButton.getBoundingClientRect()
-    const containerRect = toggleRef.current?.getBoundingClientRect()
+    const containerRect = toggleRef.current.getBoundingClientRect()
     
-    if (containerRect) {
+    // Calculate relative position within the container
+    const relativeLeft = rect.left - containerRect.left - 1 // Subtract 1px for the padding
+    
+    if (!isInitialized.current) {
+      // Set initial position without animation
+      gsap.set(sliderRef.current, {
+        x: relativeLeft,
+        width: rect.width,
+      })
+      isInitialized.current = true
+    } else {
+      // Animate to new position
       gsap.to(sliderRef.current, {
-        x: rect.left - containerRect.left,
+        x: relativeLeft,
         width: rect.width,
         duration: 0.5,
         ease: "power2.inOut"
@@ -94,8 +106,13 @@ export function LanguageToggle() {
       {/* Sliding background */}
       <div 
         ref={sliderRef}
-        className="absolute h-8 bg-dealership-black rounded-md transition-opacity"
-        style={{ opacity: 0.9 }}
+        className="absolute top-1 h-8 bg-dealership-black rounded-md pointer-events-none"
+        style={{ 
+          opacity: 0.9,
+          left: 0,
+          transform: 'translateX(0)',
+          zIndex: 1
+        }}
       />
       
       {/* Language buttons */}
