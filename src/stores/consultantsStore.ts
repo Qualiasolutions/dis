@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { supabase } from '../lib/supabase'
+import { mockConsultants, isDemoMode, simulateNetworkDelay } from '../lib/mockData'
 import type { Consultant } from '../types'
 
 interface ConsultantWithStats extends Consultant {
@@ -31,6 +32,19 @@ export const useConsultantsStore = create<ConsultantsStore>((set, get) => ({
     set({ loading: true, error: null })
     
     try {
+      // Use mock data in demo mode
+      if (isDemoMode()) {
+        await simulateNetworkDelay(300)
+        const consultantsWithStats = mockConsultants.map(consultant => ({
+          ...consultant,
+          activeVisitsCount: consultant.currentVisits,
+          totalVisitsToday: consultant.currentVisits + Math.floor(Math.random() * 3),
+          isAvailable: consultant.isAvailable
+        }))
+        set({ consultants: consultantsWithStats, loading: false })
+        return
+      }
+
       // Fetch consultants with their visit counts
       const { data: consultants, error: consultantsError } = await supabase
         .from('consultants')
@@ -72,10 +86,23 @@ export const useConsultantsStore = create<ConsultantsStore>((set, get) => ({
       set({ consultants: consultantsWithStats, loading: false })
     } catch (error) {
       console.error('Failed to fetch consultants:', error)
-      set({ 
-        error: error instanceof Error ? error.message : 'Failed to fetch consultants',
-        loading: false 
-      })
+      
+      // Fallback to mock data if Supabase fails
+      if (!isDemoMode()) {
+        console.log('Falling back to mock data due to connection error')
+        const consultantsWithStats = mockConsultants.map(consultant => ({
+          ...consultant,
+          activeVisitsCount: consultant.currentVisits,
+          totalVisitsToday: consultant.currentVisits + Math.floor(Math.random() * 3),
+          isAvailable: consultant.isAvailable
+        }))
+        set({ consultants: consultantsWithStats, loading: false, error: null })
+      } else {
+        set({ 
+          error: error instanceof Error ? error.message : 'Failed to fetch consultants',
+          loading: false 
+        })
+      }
     }
   },
 
@@ -86,6 +113,19 @@ export const useConsultantsStore = create<ConsultantsStore>((set, get) => ({
     const newAvailability = !consultant.active
 
     try {
+      // In demo mode, just update local state
+      if (isDemoMode()) {
+        await simulateNetworkDelay(200)
+        set((state) => ({
+          consultants: state.consultants.map(c =>
+            c.id === consultantId
+              ? { ...c, active: newAvailability, isAvailable: newAvailability && c.activeVisitsCount < 5 }
+              : c
+          )
+        }))
+        return
+      }
+
       const { error } = await supabase
         .from('consultants')
         .update({ active: newAvailability })

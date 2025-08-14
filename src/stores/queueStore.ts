@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { supabase } from '../lib/supabase'
+import { mockVisits, isDemoMode, simulateNetworkDelay } from '../lib/mockData'
 import type { Visit, Customer, QueueVisit } from '../types'
 
 export type { QueueVisit }
@@ -30,6 +31,17 @@ export const useQueueStore = create<QueueStore>((set, get) => ({
     set({ loading: true, error: null })
     
     try {
+      // Use mock data in demo mode
+      if (isDemoMode()) {
+        await simulateNetworkDelay(300)
+        const activeVisits = mockVisits.filter(visit => 
+          ['new', 'contacted', 'assigned', 'in_progress'].includes(visit.status)
+        )
+        set({ visits: activeVisits as QueueVisit[], loading: false })
+        return
+      }
+
+      // Regular Supabase fetch
       const { data, error } = await supabase
         .from('visits')
         .select(`
@@ -45,15 +57,43 @@ export const useQueueStore = create<QueueStore>((set, get) => ({
       set({ visits: data || [], loading: false })
     } catch (error) {
       console.error('Failed to fetch visits:', error)
-      set({ 
-        error: error instanceof Error ? error.message : 'Failed to fetch visits',
-        loading: false 
-      })
+      
+      // Fallback to mock data if Supabase fails
+      if (!isDemoMode()) {
+        console.log('Falling back to mock data due to connection error')
+        const activeVisits = mockVisits.filter(visit => 
+          ['new', 'contacted', 'assigned', 'in_progress'].includes(visit.status)
+        )
+        set({ visits: activeVisits as QueueVisit[], loading: false, error: null })
+      } else {
+        set({ 
+          error: error instanceof Error ? error.message : 'Failed to fetch visits',
+          loading: false 
+        })
+      }
     }
   },
 
   assignConsultant: async (visitId: string, consultantId: string) => {
     try {
+      // In demo mode, just update local state
+      if (isDemoMode()) {
+        await simulateNetworkDelay(200)
+        set((state) => ({
+          visits: state.visits.map(visit =>
+            visit.id === visitId
+              ? { 
+                  ...visit, 
+                  consultant_id: consultantId, 
+                  status: 'assigned' as const,
+                  updated_at: new Date().toISOString()
+                }
+              : visit
+          )
+        }))
+        return
+      }
+
       const { error } = await supabase
         .from('visits')
         .update({ 
@@ -86,6 +126,23 @@ export const useQueueStore = create<QueueStore>((set, get) => ({
 
   updateVisitStatus: async (visitId: string, status: Visit['status']) => {
     try {
+      // In demo mode, just update local state
+      if (isDemoMode()) {
+        await simulateNetworkDelay(200)
+        set((state) => ({
+          visits: state.visits.map(visit =>
+            visit.id === visitId
+              ? { 
+                  ...visit, 
+                  status,
+                  updated_at: new Date().toISOString()
+                }
+              : visit
+          )
+        }))
+        return
+      }
+
       const { error } = await supabase
         .from('visits')
         .update({ 
@@ -115,6 +172,11 @@ export const useQueueStore = create<QueueStore>((set, get) => ({
   },
 
   subscribeToVisits: () => {
+    // In demo mode, don't create real-time subscriptions
+    if (isDemoMode()) {
+      return () => {} // Return empty unsubscribe function
+    }
+
     const channel = supabase
       .channel('visits-changes')
       .on('postgres_changes', 

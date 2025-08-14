@@ -8,21 +8,26 @@ export interface Customer {
   name: string
   email: string | null
   phone: string
-  type: CustomerType
-  notes: string | null
-  created_at: string
-  updated_at: string
+  language_preference: 'ar' | 'en'
+  created_at?: string
+  updated_at?: string
 }
 
 export interface Consultant {
   id: string
   name: string
   email: string
-  role: string
-  department: string | null
-  is_active: boolean
-  created_at: string
-  updated_at: string
+  role: 'consultant' | 'manager' | 'admin' | 'reception'
+  active: boolean
+  isAvailable?: boolean
+  currentVisits?: number
+  performance_metrics?: {
+    totalSales?: number
+    conversionRate?: number
+    averageRating?: number
+  }
+  created_at?: string
+  updated_at?: string
 }
 
 export interface Visit {
@@ -30,12 +35,13 @@ export interface Visit {
   customer_id: string
   consultant_id: string | null
   status: VisitStatus
-  visit_type: string
-  purpose: string | null
+  source: 'walk_in' | 'online' | 'phone' | 'referral'
   notes: string | null
-  vehicle_interest: string | null
-  scheduled_at: string | null
-  completed_at: string | null
+  vehicle_interest: {
+    type: string
+    budget_range: string
+    purchase_timeline: string
+  } | null
   created_at: string
   updated_at: string
 }
