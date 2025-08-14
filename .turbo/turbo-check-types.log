@@ -1,0 +1,552 @@
+
+> web@0.1.0 check-types /home/qualiasolutions/Desktop/dis/apps/web
+> tsc --noEmit
+
+src/components/ai/AIAnalysisPanel.tsx(151,24): error TS2322: Type '{ children: Element; withBorder: true; size: string; }' is not assignable to type 'IntrinsicAttributes & CardProps & ComponentProp<"div"> & Omit<Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref">, "component" | keyof CardProps> & { ...; }'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & CardProps & ComponentProp<"div"> & Omit<Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, "ref">, "component" | keyof CardProps> & { ...; }'.
+src/components/ai/AIChatbot.tsx(172,79): error TS2322: Type 'Message | undefined' is not assignable to type 'Message'.
+  Type 'undefined' is not assignable to type 'Message'.
+src/components/ai/AIChatbot.tsx(349,14): error TS2322: Type '{ children: string; jsx: true; }' is not assignable to type 'DetailedHTMLProps<StyleHTMLAttributes<HTMLStyleElement>, HTMLStyleElement>'.
+  Property 'jsx' does not exist on type 'DetailedHTMLProps<StyleHTMLAttributes<HTMLStyleElement>, HTMLStyleElement>'.
+src/components/ai/AIChatbot.tsx(413,3): error TS2322: Type 'string[] | undefined' is not assignable to type 'string[]'.
+  Type 'undefined' is not assignable to type 'string[]'.
+src/components/ai/AIPerformanceMetrics.tsx(69,26): error TS18048: 'performanceData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(70,7): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(70,75): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(72,29): error TS18048: 'performanceData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(73,7): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(73,85): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(75,25): error TS18048: 'performanceData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(76,7): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(76,83): error TS18048: 'performanceData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(84,23): error TS18048: 'accuracyData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(85,7): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(85,79): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(87,24): error TS18048: 'accuracyData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(88,7): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(88,93): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(90,21): error TS18048: 'accuracyData.length' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(91,7): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/AIPerformanceMetrics.tsx(91,78): error TS18048: 'accuracyData' is possibly 'undefined'.
+src/components/ai/PredictiveAnalytics.tsx(340,41): error TS2322: Type '{ children: Element; color: "blue"; mt: "md"; size: string; }' is not assignable to type 'IntrinsicAttributes & AlertProps & RefAttributes<HTMLDivElement> & { component?: any; renderRoot?: ((props: Record<string, any>) => ReactNode) | undefined; }'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & AlertProps & RefAttributes<HTMLDivElement> & { component?: any; renderRoot?: ((props: Record<string, any>) => ReactNode) | undefined; }'.
+src/components/ai/PredictiveAnalytics.tsx(393,32): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ sales: number; conversion: string; satisfaction: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ sales: number; conversion: string; satisfaction: string; }'.
+src/components/ai/PredictiveAnalytics.tsx(395,32): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ sales: number; conversion: string; satisfaction: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ sales: number; conversion: string; satisfaction: string; }'.
+src/components/ai/PredictiveAnalytics.tsx(395,71): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ sales: number; conversion: string; satisfaction: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ sales: number; conversion: string; satisfaction: string; }'.
+src/components/ai/PredictiveAnalytics.tsx(396,26): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ sales: number; conversion: string; satisfaction: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ sales: number; conversion: string; satisfaction: string; }'.
+src/components/ai/PriorityDashboard.tsx(296,47): error TS2322: Type '{ children: Element; color: "blue"; size: string; p: "xs"; }' is not assignable to type 'IntrinsicAttributes & AlertProps & RefAttributes<HTMLDivElement> & { component?: any; renderRoot?: ((props: Record<string, any>) => ReactNode) | undefined; }'.
+  Property 'size' does not exist on type 'IntrinsicAttributes & AlertProps & RefAttributes<HTMLDivElement> & { component?: any; renderRoot?: ((props: Record<string, any>) => ReactNode) | undefined; }'.
+src/components/analytics/AnalyticsDashboard.tsx(129,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/AnalyticsDashboard.tsx(137,58): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/AnalyticsDashboard.tsx(138,53): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/AnalyticsDashboard.tsx(140,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/AnalyticsDashboard.tsx(140,36): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/AnalyticsDashboard.tsx(144,57): error TS2339: Property 'active' does not exist on type 'ConsultantWithStats'.
+src/components/analytics/AnalyticsDashboard.tsx(364,13): error TS2719: Type 'ConsultantWithStats[]' is not assignable to type 'ConsultantWithStats[]'. Two different types with this name exist, but they are unrelated.
+  Type 'ConsultantWithStats' is missing the following properties from type 'ConsultantWithStats': id, name, active
+src/components/analytics/AnalyticsDashboard.tsx(373,13): error TS2719: Type 'ConsultantWithStats[]' is not assignable to type 'ConsultantWithStats[]'. Two different types with this name exist, but they are unrelated.
+  Type 'ConsultantWithStats' is missing the following properties from type 'ConsultantWithStats': id, name, active
+src/components/analytics/AnalyticsDashboard.tsx(420,19): error TS2322: Type 'ConsultantWithStats[]' is not assignable to type '{ id: string; name: string; active: boolean; }[]'.
+  Type 'ConsultantWithStats' is missing the following properties from type '{ id: string; name: string; active: boolean; }': id, name, active
+src/components/analytics/ConsultantPerformance.tsx(83,53): error TS2551: Property 'consultant_id' does not exist on type 'QueueVisit'. Did you mean 'consultant'?
+src/components/analytics/ConsultantPerformance.tsx(84,62): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(85,57): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(92,64): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(92,80): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(95,42): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(96,40): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(103,11): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(103,33): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(103,49): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(107,44): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/ConsultantPerformance.tsx(108,46): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(107,35): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(129,9): error TS18048: 'communicationPreferences.phone_and_email' is possibly 'undefined'.
+src/components/analytics/CustomerInsights.tsx(131,9): error TS18048: 'communicationPreferences.phone_only' is possibly 'undefined'.
+src/components/analytics/CustomerInsights.tsx(133,9): error TS18048: 'communicationPreferences.email_preferred' is possibly 'undefined'.
+src/components/analytics/CustomerInsights.tsx(140,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(140,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(141,28): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(150,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(150,37): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(150,53): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(154,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(155,38): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(162,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(162,31): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(162,48): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(167,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(167,37): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(176,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/CustomerInsights.tsx(177,44): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(68,33): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(69,38): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(70,41): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(71,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(72,34): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(76,56): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(83,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(83,37): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(83,53): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(87,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(88,38): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(96,35): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(115,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(115,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/DealershipMetrics.tsx(116,28): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(74,50): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(75,45): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(77,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(77,36): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(88,28): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/components/analytics/SalesAnalytics.tsx(98,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(98,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(99,28): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(106,19): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(116,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(116,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(117,30): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(125,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(125,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(126,32): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(133,19): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(142,7): error TS18048: 'data' is possibly 'undefined'.
+src/components/analytics/SalesAnalytics.tsx(142,19): error TS18048: 'data' is possibly 'undefined'.
+src/components/analytics/SalesAnalytics.tsx(142,37): error TS18048: 'data' is possibly 'undefined'.
+src/components/analytics/SalesAnalytics.tsx(142,54): error TS18048: 'data' is possibly 'undefined'.
+src/components/analytics/SalesAnalytics.tsx(151,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(151,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(152,43): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(158,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(158,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(159,43): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/analytics/SalesAnalytics.tsx(343,37): error TS2532: Object is possibly 'undefined'.
+src/components/auth/ModernAuthPage.tsx(39,30): error TS2554: Expected 3 arguments, but got 1.
+src/components/auth/ModernAuthPage.tsx(47,20): error TS2339: Property 'success' does not exist on type '{ error: any; }'.
+src/components/auth/ModernAuthPage.tsx(64,20): error TS2339: Property 'success' does not exist on type '{ error: any; }'.
+src/components/charts/ConsultantPerformanceChart.tsx(87,55): error TS2551: Property 'consultant_id' does not exist on type 'QueueVisit'. Did you mean 'consultant'?
+src/components/charts/ConsultantPerformanceChart.tsx(88,64): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConsultantPerformanceChart.tsx(89,59): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConsultantPerformanceChart.tsx(91,13): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConsultantPerformanceChart.tsx(91,40): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConsultantPerformanceChart.tsx(236,54): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(o: {}): string[]', gave the following error.
+    Argument of type '{ consultant: string | undefined; 'Conversion Rate': number; 'Volume Score': number; 'Response Speed': number; 'Active Pipeline': number; 'Overall Score': number; } | undefined' is not assignable to parameter of type '{}'.
+      Type 'undefined' is not assignable to type '{}'.
+  Overload 2 of 2, '(o: object): string[]', gave the following error.
+    Argument of type '{ consultant: string | undefined; 'Conversion Rate': number; 'Volume Score': number; 'Response Speed': number; 'Active Pipeline': number; 'Overall Score': number; } | undefined' is not assignable to parameter of type 'object'.
+      Type 'undefined' is not assignable to type 'object'.
+src/components/charts/ConversionFunnelChart.tsx(45,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(45,35): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(48,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(48,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(48,68): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(51,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(51,38): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(51,68): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(53,50): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/ConversionFunnelChart.tsx(107,23): error TS18048: 'prevStage' is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(108,27): error TS18048: 'prevStage' is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(108,60): error TS18048: 'prevStage' is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(111,15): error TS18048: 'prevStage' is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(151,38): error TS2532: Object is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(259,21): error TS2532: Object is possibly 'undefined'.
+src/components/charts/ConversionFunnelChart.tsx(259,52): error TS2532: Object is possibly 'undefined'.
+src/components/charts/VehicleInterestChart.tsx(83,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VehicleInterestChart.tsx(83,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VehicleInterestChart.tsx(88,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VehicleInterestChart.tsx(91,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VehicleInterestChart.tsx(94,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VehicleInterestChart.tsx(97,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/charts/VisitTrendsChart.tsx(100,49): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/charts/VisitTrendsChart.tsx(105,55): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/VisitTrendsChart.tsx(106,50): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(7,1): error TS2708: Cannot use namespace 'jest' as a value.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(22,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(39,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(61,1): error TS2593: Cannot find name 'describe'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(62,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(69,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(72,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(79,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(80,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(83,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(90,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(91,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(92,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(95,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(103,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(114,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(117,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(133,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(136,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(143,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(144,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(145,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(148,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(157,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(161,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(164,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(171,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(180,5): error TS2304: Cannot find name 'expect'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(183,3): error TS2593: Cannot find name 'it'. Do you need to install type definitions for a test runner? Try `npm i --save-dev @types/jest` or `npm i --save-dev @types/mocha` and then add 'jest' or 'mocha' to the types field in your tsconfig.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(207,27): error TS2322: Type '(QueueVisit | { id: string; customer_id: string; consultant_id: string; status: string; created_at: string; updated_at: string; customer_name: string; customer_phone: string; vehicle_interest: { ...; }; consultant_notes: string; })[]' is not assignable to type 'QueueVisit[]'.
+  Type 'QueueVisit | { id: string; customer_id: string; consultant_id: string; status: string; created_at: string; updated_at: string; customer_name: string; customer_phone: string; vehicle_interest: { ...; }; consultant_notes: string; }' is not assignable to type 'QueueVisit'.
+    Property 'customer' is missing in type '{ id: string; customer_id: string; consultant_id: string; status: string; created_at: string; updated_at: string; customer_name: string; customer_phone: string; vehicle_interest: { type: string; brand: string; budget_range: string; purchase_timeline: string; }; consultant_notes: string; }' but required in type 'QueueVisit'.
+src/components/charts/__tests__/VisitTrendsChart.test.tsx(212,5): error TS2304: Cannot find name 'expect'.
+src/components/common/ModernNavigation.tsx(70,36): error TS2339: Property 'user_role' does not exist on type 'AuthUser'.
+src/components/common/ModernNavigation.tsx(70,82): error TS2339: Property 'user_role' does not exist on type 'AuthUser'.
+src/components/common/Navigation.tsx(59,38): error TS2345: Argument of type 'readonly ["reception", "consultant", "manager", "admin"] | readonly ["consultant", "manager", "admin"] | readonly ["manager", "admin"]' is not assignable to parameter of type 'UserRole | UserRole[]'.
+  Type 'readonly ["reception", "consultant", "manager", "admin"]' is not assignable to type 'UserRole | UserRole[]'.
+    The type 'readonly ["reception", "consultant", "manager", "admin"]' is 'readonly' and cannot be assigned to the mutable type 'UserRole[]'.
+src/components/consultant/AssignedCustomersList.tsx(92,72): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(96,15): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(126,30): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(160,60): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(167,63): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(169,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(175,63): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(177,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(183,63): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(186,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(186,66): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(197,26): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ readonly new: "blue"; readonly contacted: "yellow"; readonly assigned: "green"; readonly in_progress: "orange"; readonly completed: "gray"; readonly lost: "red"; }'.
+src/components/consultant/AssignedCustomersList.tsx(197,45): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(201,26): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(208,38): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(213,22): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(217,35): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(218,34): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(218,67): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(219,31): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(229,46): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(234,22): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(238,28): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(248,56): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(255,24): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(258,61): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(266,24): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/AssignedCustomersList.tsx(270,61): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/consultant/ConsultantDashboard.tsx(63,11): error TS2551: Property 'consultant_id' does not exist on type 'QueueVisit'. Did you mean 'consultant'?
+src/components/consultant/ConsultantDashboard.tsx(68,38): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/ConsultantDashboard.tsx(73,38): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/ConsultantDashboard.tsx(78,11): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/ConsultantDashboard.tsx(78,42): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/ConsultantDashboard.tsx(82,11): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(206,52): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(207,26): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(227,48): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(236,16): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(243,27): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(247,42): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(251,42): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(253,24): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(256,44): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(261,38): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(278,20): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(288,20): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(308,20): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/consultant/CustomerProfileModal.tsx(312,26): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(71,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(76,58): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(77,53): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(78,59): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(79,57): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(82,64): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(89,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(89,37): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(89,53): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(94,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(95,38): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(105,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(105,31): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(105,47): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(110,42): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/PerformanceMetrics.tsx(111,44): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(23,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(41,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(57,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(159,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(189,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(204,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/AssignedCustomersList.test.tsx(219,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/ConsultantDashboard.test.tsx(161,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/ConsultantDashboard.test.tsx(182,15): error TS2304: Cannot find name 'useAuthStore'.
+src/components/consultant/__tests__/ConsultantDashboard.test.tsx(196,15): error TS2304: Cannot find name 'useQueueStore'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(214,7): error TS2322: Type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>; }>; }>' is not assignable to type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: n...'.
+  Types of property 'mock' are incompatible.
+    Type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>; }>; }>' is not assignable to type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; e...'.
+      Type '{ eq: Mock<[], { single: Mock<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>; }>; }' is not assignable to type '{ eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; ...'.
+        The types of 'eq.mock' are incompatible between these types.
+          Type 'MockContext<[], { single: Mock<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>; }>' is not assignable to type 'MockContext<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>;...'.
+            Type '{ single: Mock<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>; }' is not assignable to type '{ single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }'.
+              The types of 'single.mock' are incompatible between these types.
+                Type 'MockContext<[], { data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }>' is not assignable to type 'MockContext<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; co...'.
+                  Type '{ data: { visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }; error: null; }' is not assignable to type '{ data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...;...'.
+                    Types of property 'data' are incompatible.
+                      Type '{ visitId: string; opened: boolean; onClose: Mock<any, any>; onStatusUpdate: Mock<any, any>; }' is missing the following properties from type '{ id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...; }; }': id, consultant_id, customer, status, and 6 more.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(222,7): error TS2322: Type 'Mock<[], { eq: Mock<[], { data: null; error: Error; }>; }>' is not assignable to type 'Mock<[], { eq: Mock<[], { data: null; error: null; }>; }>'.
+  Types of property 'mock' are incompatible.
+    Type 'MockContext<[], { eq: Mock<[], { data: null; error: Error; }>; }>' is not assignable to type 'MockContext<[], { eq: Mock<[], { data: null; error: null; }>; }>'.
+      Type '{ eq: Mock<[], { data: null; error: Error; }>; }' is not assignable to type '{ eq: Mock<[], { data: null; error: null; }>; }'.
+        The types of 'eq.mock' are incompatible between these types.
+          Type 'MockContext<[], { data: null; error: Error; }>' is not assignable to type 'MockContext<[], { data: null; error: null; }>'.
+            Type '{ data: null; error: Error; }' is not assignable to type '{ data: null; error: null; }'.
+              Types of property 'error' are incompatible.
+                Type 'Error' is not assignable to type 'null'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(259,53): error TS2769: No overload matches this call.
+  Overload 1 of 2, '(fn: () => { select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>; }>; update: Mock<...>; }): MockedFunction<...>', gave the following error.
+    Argument of type 'Mock<[], { select: Mock<[], { eq: Mock<[], { single: Mock<[], Promise<unknown>>; }>; }>; }>' is not assignable to parameter of type '() => { select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ......'.
+      Property 'update' is missing in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], Promise<unknown>>; }>; }>; }' but required in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...'.
+  Overload 2 of 2, '(fn: () => { select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>; }>; update: Mock<...>; }): Mock<...>', gave the following error.
+    Argument of type 'Mock<[], { select: Mock<[], { eq: Mock<[], { single: Mock<[], Promise<unknown>>; }>; }>; }>' is not assignable to parameter of type '() => { select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ......'.
+      Property 'update' is missing in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], Promise<unknown>>; }>; }>; }' but required in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(300,43): error TS2345: Argument of type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { status: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...' is not assignable to parameter of type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...'.
+  Property 'update' is missing in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { status: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...' but required in type '{ select: Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }...'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(330,7): error TS2322: Type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: nul...' is not assignable to type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: n...'.
+  Types of property 'mock' are incompatible.
+    Type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; err...' is not assignable to type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; e...'.
+      Type '{ eq: Mock<[], { single: Mock<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>...' is not assignable to type '{ eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; ...'.
+        The types of 'eq.mock' are incompatible between these types.
+          Type 'MockContext<[], { single: Mock<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>' is not assignable to type 'MockContext<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>;...'.
+            Type '{ single: Mock<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }' is not assignable to type '{ single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }'.
+              The types of 'single.mock' are incompatible between these types.
+                Type 'MockContext<[], { data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; cons...' is not assignable to type 'MockContext<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; co...'.
+                  Type '{ data: { customer: { email: null; id: string; name: string; phone: string; }; id: string; consultant_id: string; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...; }...' is not assignable to type '{ data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...;...'.
+                    The types of 'data.customer.email' are incompatible between these types.
+                      Type 'null' is not assignable to type 'string'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(357,7): error TS2322: Type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null;...' is not assignable to type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: n...'.
+  Types of property 'mock' are incompatible.
+    Type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error...' is not assignable to type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; e...'.
+      Type '{ eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>; }' is not assignable to type '{ eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; ...'.
+        The types of 'eq.mock' are incompatible between these types.
+          Type 'MockContext<[], { single: Mock<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>' is not assignable to type 'MockContext<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>;...'.
+            Type '{ single: Mock<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }' is not assignable to type '{ single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }'.
+              The types of 'single.mock' are incompatible between these types.
+                Type 'MockContext<[], { data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>' is not assignable to type 'MockContext<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; co...'.
+                  Type '{ data: { vehicle_interest: null; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }' is not assignable to type '{ data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...;...'.
+                    The types of 'data.vehicle_interest' are incompatible between these types.
+                      Type 'null' is not assignable to type '{ type: string; budget_range: string; purchase_timeline: string; }'.
+src/components/consultant/__tests__/CustomerProfileModal.test.tsx(384,7): error TS2322: Type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: nul...' is not assignable to type 'Mock<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: n...'.
+  Types of property 'mock' are incompatible.
+    Type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; err...' is not assignable to type 'MockContext<[], { eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; e...'.
+      Type '{ eq: Mock<[], { single: Mock<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>...' is not assignable to type '{ eq: Mock<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; ...'.
+        The types of 'eq.mock' are incompatible between these types.
+          Type 'MockContext<[], { single: Mock<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }>' is not assignable to type 'MockContext<[], { single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>;...'.
+            Type '{ single: Mock<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }' is not assignable to type '{ single: Mock<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { ...; }; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>; }'.
+              The types of 'single.mock' are incompatible between these types.
+                Type 'MockContext<[], { data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }>' is not assignable to type 'MockContext<[], { data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; co...'.
+                  Type '{ data: { vehicle_interest: string; id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; notes: string; consultant_notes: string; consultant: { ...; }; }; error: null; }' is not assignable to type '{ data: { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; email: string; }; status: string; created_at: string; updated_at: string; vehicle_interest: { type: string; budget_range: string; purchase_timeline: string; }; notes: string; consultant_notes: string; consultant: { ...;...'.
+                    The types of 'data.vehicle_interest' are incompatible between these types.
+                      Type 'string' is not assignable to type '{ type: string; budget_range: string; purchase_timeline: string; }'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(16,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(28,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(40,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(52,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(64,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(199,9): error TS2322: Type 'QueueVisit | { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; }; status: string; created_at: string; updated_at: string; }' is not assignable to type 'QueueVisit'.
+  Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/PerformanceMetrics.test.tsx(199,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(11,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(30,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(89,23): error TS2532: Object is possibly 'undefined'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(91,25): error TS2532: Object is possibly 'undefined'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(91,39): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(92,25): error TS2532: Object is possibly 'undefined'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(92,39): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(93,31): error TS2532: Object is possibly 'undefined'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(93,45): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(94,20): error TS2532: Object is possibly 'undefined'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(94,34): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(178,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(327,31): error TS2345: Argument of type 'Element' is not assignable to parameter of type 'HTMLElement'.
+  Type 'Element' is missing the following properties from type 'HTMLElement': accessKey, accessKeyLabel, autocapitalize, dir, and 126 more.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(373,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/consultant/__tests__/consultant-workflow.integration.test.tsx(405,21): error TS2345: Argument of type 'HTMLElement | undefined' is not assignable to parameter of type 'Window | Document | Node | Element'.
+  Type 'undefined' is not assignable to type 'Window | Document | Node | Element'.
+src/components/profile/UserProfile.tsx(9,17): error TS2339: Property 'userRole' does not exist on type 'AuthStore'.
+src/components/profile/UserProfile.tsx(41,48): error TS2339: Property 'name' does not exist on type 'AuthUser'.
+src/components/queue/QueueCard.tsx(60,36): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(70,24): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(83,61): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(86,37): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(113,36): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(123,23): error TS2339: Property 'id' does not exist on type 'ConsultantWithStats'.
+src/components/queue/QueueCard.tsx(124,26): error TS2339: Property 'name' does not exist on type 'ConsultantWithStats'.
+src/components/queue/QueueCard.tsx(150,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ readonly new: "blue"; readonly contacted: "yellow"; readonly assigned: "green"; readonly in_progress: "orange"; readonly completed: "gray"; readonly lost: "red"; }'.
+src/components/queue/QueueCard.tsx(150,46): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(151,22): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(164,37): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(190,16): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(194,29): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(195,28): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(195,61): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(196,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(207,42): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(227,34): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(227,61): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(249,16): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/queue/QueueCard.tsx(251,21): error TS2339: Property 'notes' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(93,20): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(93,55): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(96,30): error TS18048: 'oldestVisit' is possibly 'undefined'.
+src/components/queue/ReceptionQueue.tsx(96,42): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(96,56): error TS2339: Property 'id' does not exist on type 'ConsultantWithStats'.
+src/components/queue/ReceptionQueue.tsx(100,21): error TS18048: 'oldestVisit' is possibly 'undefined'.
+src/components/queue/ReceptionQueue.tsx(100,72): error TS2339: Property 'name' does not exist on type 'ConsultantWithStats'.
+src/components/queue/ReceptionQueue.tsx(262,38): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(284,38): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/components/queue/ReceptionQueue.tsx(306,38): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/hooks/__tests__/useFormValidation.test.ts(18,1): error TS2304: Cannot find name 'vi'.
+src/hooks/useAIAnalysis.ts(217,3): error TS2322: Type 'string | undefined' is not assignable to type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/hooks/useAnalytics.ts(171,9): error TS2322: Type '{ date: string | undefined; visits: number; conversions: number; }[]' is not assignable to type '{ date: string; visits: number; conversions: number; }[]'.
+  Type '{ date: string | undefined; visits: number; conversions: number; }' is not assignable to type '{ date: string; visits: number; conversions: number; }'.
+    Types of property 'date' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+src/hooks/useAnalytics.ts(223,30): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/hooks/useAnalytics.ts(349,43): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/hooks/useAnalytics.ts(388,9): error TS2322: Type '{ date: string | undefined; efficiency: number; }[]' is not assignable to type '{ date: string; efficiency: number; }[]'.
+  Type '{ date: string | undefined; efficiency: number; }' is not assignable to type '{ date: string; efficiency: number; }'.
+    Types of property 'date' are incompatible.
+      Type 'string | undefined' is not assignable to type 'string'.
+        Type 'undefined' is not assignable to type 'string'.
+src/hooks/useChartWorker.ts(155,13): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(157,60): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(180,53): error TS2551: Property 'consultant_id' does not exist on type 'QueueVisit'. Did you mean 'consultant'?
+src/hooks/useChartWorker.ts(181,58): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(203,15): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(203,48): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(204,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(224,41): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(225,43): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(226,42): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(227,42): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(240,42): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(241,37): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(242,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useChartWorker.ts(242,66): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/hooks/useConsultants.ts(91,44): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/hooks/useConsultants.ts(94,47): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/hooks/useVisits.ts(102,39): error TS2345: Argument of type 'readonly ["app", "visits", "list", any]' is not assignable to parameter of type 'string[]'.
+  The type 'readonly ["app", "visits", "list", any]' is 'readonly' and cannot be assigned to the mutable type 'string[]'.
+src/hooks/useVisits.ts(105,7): error TS2322: Type '{ id: any; customer_id: any; consultant_id: any; status: any; created_at: any; updated_at: any; customer_name: any; customer_phone: any; vehicle_interest: any; consultant_notes: any; ai_analysis: any; }[]' is not assignable to type 'QueueVisit[]'.
+  Property 'customer' is missing in type '{ id: any; customer_id: any; consultant_id: any; status: any; created_at: any; updated_at: any; customer_name: any; customer_phone: any; vehicle_interest: any; consultant_notes: any; ai_analysis: any; }' but required in type 'QueueVisit'.
+src/hooks/useVisits.ts(168,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/hooks/useVisits.ts(235,34): error TS2551: Property 'customer_id' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'. Did you mean 'customer'?
+src/hooks/useVisits.ts(236,36): error TS2551: Property 'consultant_id' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'. Did you mean 'consultant'?
+src/hooks/useVisits.ts(237,29): error TS2339: Property 'status' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/hooks/useVisits.ts(238,36): error TS2339: Property 'customer_name' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/hooks/useVisits.ts(239,37): error TS2339: Property 'customer_phone' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/hooks/useVisits.ts(240,39): error TS2339: Property 'vehicle_interest' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/hooks/useVisits.ts(241,39): error TS2339: Property 'consultant_notes' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/hooks/useVisits.ts(242,34): error TS2339: Property 'ai_analysis' does not exist on type 'Omit<QueueVisit, "id" | "created_at" | "updated_at">'.
+src/lib/supabase.ts(2,31): error TS2307: Cannot find module '@repo/shared/types/database' or its corresponding type declarations.
+src/pages/Dashboard.tsx(32,107): error TS2307: Cannot find module '../components/charts' or its corresponding type declarations.
+src/pages/Dashboard.tsx(42,11): error TS2339: Property 'visits' does not exist on type 'UseQueryResult<QueueVisit[], Error>'.
+src/pages/Dashboard.tsx(43,11): error TS2339: Property 'consultants' does not exist on type 'UseQueryResult<Consultant[], Error>'.
+src/pages/Dashboard.tsx(44,11): error TS2339: Property 'queue' does not exist on type 'QueueStore'.
+src/pages/Dashboard.tsx(48,39): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(49,42): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(52,38): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(57,44): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(58,42): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(195,37): error TS2322: Type 'Dispatch<SetStateAction<string>>' is not assignable to type '(value: string | null) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'string | null' is not assignable to type 'SetStateAction<string>'.
+      Type 'null' is not assignable to type 'SetStateAction<string>'.
+src/pages/Dashboard.tsx(246,52): error TS7006: Parameter 'c' implicitly has an 'any' type.
+src/pages/VisitDetails.tsx(131,33): error TS2322: Type 'Dispatch<SetStateAction<string>>' is not assignable to type '(value: string | null) => void'.
+  Types of parameters 'value' and 'value' are incompatible.
+    Type 'string | null' is not assignable to type 'SetStateAction<string>'.
+      Type 'null' is not assignable to type 'SetStateAction<string>'.
+src/stores/consultantsStore.ts(3,33): error TS2307: Cannot find module '@repo/shared/types' or its corresponding type declarations.
+src/stores/consultantsStore.ts(83,54): error TS2339: Property 'id' does not exist on type 'ConsultantWithStats'.
+src/stores/consultantsStore.ts(86,41): error TS2339: Property 'active' does not exist on type 'ConsultantWithStats'.
+src/stores/consultantsStore.ts(99,13): error TS2339: Property 'id' does not exist on type 'ConsultantWithStats'.
+src/stores/queueStore.ts(3,38): error TS2307: Cannot find module '@repo/shared/types' or its corresponding type declarations.
+src/stores/queueStore.ts(77,17): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(108,17): error TS2339: Property 'id' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(150,47): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(155,13): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(155,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(161,13): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/stores/queueStore.ts(161,44): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/sw.ts(6,34): error TS2307: Cannot find module 'workbox-expiration' or its corresponding type declarations.
+src/sw.ts(7,38): error TS2307: Cannot find module 'workbox-background-sync' or its corresponding type declarations.
+src/sw.ts(8,23): error TS2307: Cannot find module 'workbox-background-sync' or its corresponding type declarations.
+src/sw.ts(85,20): error TS7031: Binding element 'queue' implicitly has an 'any' type.
+src/sw.ts(204,13): error TS2339: Property 'tag' does not exist on type 'Event'.
+src/sw.ts(205,11): error TS2339: Property 'waitUntil' does not exist on type 'Event'.
+src/utils/__tests__/performance-metrics.test.ts(25,38): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(30,56): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(31,51): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(32,57): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(33,55): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(36,62): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(43,7): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(43,35): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(43,51): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(48,38): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(49,36): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(58,7): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(58,29): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(58,45): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(63,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(64,42): error TS2339: Property 'updated_at' does not exist on type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(86,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(98,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(110,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(122,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(134,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(146,5): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(209,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(235,9): error TS2322: Type 'QueueVisit | { id: string; consultant_id: string; customer: { id: string; name: string; phone: string; }; status: string; created_at: string; updated_at: string; }' is not assignable to type 'QueueVisit'.
+  Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(235,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(255,17): error TS2556: A spread argument must either have a tuple type or be passed to a rest parameter.
+src/utils/__tests__/performance-metrics.test.ts(279,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(291,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/utils/__tests__/performance-metrics.test.ts(313,9): error TS2353: Object literal may only specify known properties, and 'id' does not exist in type 'QueueVisit'.
+src/workers/chartWorker.ts(65,19): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/workers/chartWorker.ts(70,40): error TS2339: Property 'created_at' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(71,35): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/workers/chartWorker.ts(75,19): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(129,47): error TS2551: Property 'consultant_id' does not exist on type 'QueueVisit'. Did you mean 'consultant'?
+src/workers/chartWorker.ts(132,19): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(177,17): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(177,50): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(182,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(185,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(188,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(191,25): error TS2339: Property 'vehicle_interest' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(215,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(215,35): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(218,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(218,39): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(218,68): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(221,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(221,38): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(221,68): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(223,50): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(267,50): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(268,45): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(270,9): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+src/workers/chartWorker.ts(270,36): error TS2339: Property 'status' does not exist on type 'QueueVisit'.
+ ELIFECYCLE  Command failed with exit code 2.

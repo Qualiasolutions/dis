@@ -4,19 +4,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Dealership Intelligence System (DIS) - An AI-powered car dealership management system for Jordan, built as a Turborepo monorepo with React/TypeScript frontend and Supabase backend.
+Dealership Intelligence System (DIS) - An AI-powered car dealership management system for Jordan, built with React/TypeScript frontend and Supabase backend.
 
 ## Development Commands
 
 ### Core Commands
 ```bash
-# Development - starts all apps in dev mode
+# Development - starts the development server
 pnpm dev
 
-# Build - builds all apps and packages
+# Build - builds the application for production
 pnpm build
 
-# Linting - runs ESLint across all packages
+# Linting - runs ESLint 
 pnpm lint
 
 # Type checking - validates TypeScript types
@@ -31,17 +31,6 @@ pnpm test:coverage     # Generate coverage report
 pnpm format
 ```
 
-### Package-Specific Commands
-```bash
-# Work on specific app
-pnpm --filter web dev        # Start web app only
-pnpm --filter web test       # Test web app only
-pnpm --filter web build      # Build web app only
-
-# Run single test file
-pnpm --filter web test src/components/consultant/__tests__/ConsultantDashboard.test.tsx
-```
-
 ### Database Commands
 ```bash
 # Supabase local development
@@ -52,14 +41,12 @@ supabase migration new  # Create new migration
 
 ## Architecture
 
-### Monorepo Structure
-- **Turborepo** orchestrates builds and caching across packages
-- **apps/web**: Main React SPA with Vite, Mantine UI, React Query, Zustand
-- **apps/docs**: Next.js documentation site (minimal usage)
-- **packages/**: Shared packages (ui, eslint-config, typescript-config)
+### Project Structure
+- **src/**: Main application source code with React SPA using Vite, Mantine UI, React Query, Zustand
 - **supabase/**: Database migrations, Edge Functions, and configurations
+- **dist/**: Production build output
 
-### Frontend Architecture (apps/web)
+### Frontend Architecture
 - **State Management**: 
   - Zustand stores in `src/stores/` for auth, language, queue, consultants
   - React Query for server state and caching
