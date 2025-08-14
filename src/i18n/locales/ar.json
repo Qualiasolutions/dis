@@ -115,5 +115,143 @@
     "consultant": "مستشار المبيعات",
     "manager": "مدير",
     "admin": "مدير النظام"
+  },
+  "ai": {
+    "analysisTitle": "تحليل الذكاء الاصطناعي",
+    "loading": "جارٍ تحليل بيانات الزيارة...",
+    "visitNotFound": "لم يتم العثور على الزيارة",
+    "noAnalysisYet": "لا يوجد تحليل بالذكاء الاصطناعي متاح بعد. انقر على 'تحليل الآن' لإنشاء رؤى.",
+    "analyzeNow": "تحليل الآن",
+    "reanalyze": "إعادة التحليل",
+    "fallback": "بديل",
+    "purchaseProb": "احتمالية الشراء",
+    "sentiment": "المشاعر",
+    "priority": "الأولوية",
+    "confidence": "الثقة",
+    "recommendedActions": "الإجراءات الموصى بها",
+    "concerns": "المخاوف",
+    "opportunities": "الفرص",
+    "nextContact": "الاتصال التالي",
+    "culturalConsiderations": "الاعتبارات الثقافية",
+    "reasoning": "منطق الذكاء الاصطناعي",
+    "analyzed": "تم التحليل بالذكاء الاصطناعي",
+    "highPriority": "أولوية عالية",
+    "needsAttention": "يحتاج إلى اهتمام",
+    "insights": "رؤى الذكاء الاصطناعي",
+    "lastAnalysis": "آخر تحليل",
+    "topActions": "أهم الإجراءات",
+    "performance": {
+      "title": "مقاييس أداء الذكاء الاصطناعي",
+      "totalAnalyses": "إجمالي التحليلات",
+      "successRate": "معدل النجاح",
+      "avgTime": "متوسط الوقت",
+      "avgConfidence": "متوسط الثقة",
+      "trendsTitle": "اتجاهات التحليل",
+      "noData": "لا توجد بيانات أداء متاحة",
+      "methodUsage": "استخدام الطريقة",
+      "total": "الإجمالي",
+      "accuracy": {
+        "title": "دقة التنبؤ",
+        "overall": "الدقة الإجمالية",
+        "precision": "الدقة",
+        "recall": "الاستدعاء",
+        "predictions": "التنبؤات",
+        "noData": "لا توجد بيانات دقة متاحة"
+      }
+    },
+    "priority": {
+      "title": "لوحة العملاء ذوي الأولوية",
+      "customers": "عملاء",
+      "loadError": "فشل تحميل العملاء ذوي الأولوية",
+      "noPriority": "لم يتم العثور على عملاء ذوي أولوية عالية",
+      "avgProb": "متوسط احتمالية الشراء",
+      "avgPriority": "متوسط الأولوية",
+      "critical": "حرج",
+      "hot": "عملاء محتملون مهمون",
+      "high": "عالي",
+      "medium": "متوسط",
+      "normal": "عادي"
+    }
+  },
+  "dashboard": {
+    "title": "لوحة القيادة",
+    "subtitle": "نظرة عامة على أداء المعرض في الوقت الفعلي",
+    "error": "فشل تحميل بيانات لوحة القيادة:",
+    "totalVisits": "إجمالي الزيارات",
+    "activeVisits": "الزيارات النشطة",
+    "conversionRate": "معدل التحويل",
+    "visits": "زيارات",
+    "completed": "مكتملة",
+    "inProgress": "قيد التقدم",
+    "overview": "نظرة عامة",
+    "analytics": "التحليلات",
+    "quickStats": "إحصائيات سريعة",
+    "avgResponseTime": "متوسط وقت الاستجابة",
+    "activeConsultants": "المستشارون النشطون",
+    "avgSatisfaction": "متوسط الرضا",
+    "detailedAnalytics": "تحليلات تفصيلية",
+    "analyticsComingSoon": "ميزات التحليل المتقدمة قادمة قريباً!"
+  },
+  "visit": {
+    "visitDetails": "تفاصيل الزيارة",
+    "notFound": "لم يتم العثور على الزيارة",
+    "details": "التفاصيل",
+    "visitDate": "تاريخ الزيارة",
+    "consultant": "المستشار",
+    "source": "المصدر",
+    "duration": "المدة",
+    "quality": "الجودة",
+    "consultantNotes": "ملاحظات المستشار",
+    "visitInfo": "معلومات الزيارة",
+    "status": {
+      "new": "جديد",
+      "contacted": "تم الاتصال",
+      "scheduled": "مجدول",
+      "test_drive": "قيادة تجريبية",
+      "negotiating": "التفاوض",
+      "completed": "مكتمل",
+      "lost": "مفقود"
+    }
+  },
+  "customer": {
+    "information": "معلومات العميل",
+    "name": "الاسم",
+    "phone": "الهاتف",
+    "language": "اللغة"
+  },
+  "vehicle": {
+    "interest": "اهتمام المركبة",
+    "type": "النوع",
+    "brand": "العلامة التجارية",
+    "model": "الطراز",
+    "budget": "الميزانية",
+    "timeline": "الجدول الزمني",
+    "financing": "التمويل",
+    "features": "الميزات"
+  },
+  "common": {
+    "back": "رجوع",
+    "refresh": "تحديث",
+    "contact": "اتصل",
+    "view": "عرض",
+    "loading": "جارٍ التحميل",
+    "today": "اليوم",
+    "week": "الأسبوع",
+    "month": "الشهر",
+    "quarter": "الربع",
+    "year": "السنة",
+    "never": "أبداً",
+    "unassigned": "غير مخصص",
+    "walkIn": "زيارة مباشرة",
+    "minutes": "دقائق"
+  },
+  "charts": {
+    "visitTrends": "اتجاهات الزيارات",
+    "conversionFunnel": "قمع التحويل",
+    "consultantPerformance": "أداء المستشار",
+    "vehicleInterest": "اهتمام المركبات"
+  },
+  "app": {
+    "name": "ذكاء المعرض"
   }
 }

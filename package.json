@@ -16,6 +16,7 @@
     "format": "prettier --write src"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@mantine/core": "^7.5.0",
     "@mantine/dates": "^7.5.0",
     "@mantine/form": "^7.5.0",
@@ -32,6 +33,7 @@
     "date-fns": "^3.2.0",
     "dayjs": "^1.11.10",
     "framer-motion": "^12.23.12",
+    "gsap": "^3.13.0",
     "i18next": "^23.7.16",
     "i18next-browser-languagedetector": "^7.2.0",
     "react": "^18.2.0",

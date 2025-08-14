@@ -15,6 +15,7 @@ import { ConsultantDashboard } from './components/consultant/ConsultantDashboard
 import { AnalyticsDashboard } from './components/analytics/AnalyticsDashboard'
 import { UserProfile } from './components/profile/UserProfile'
 import { SimpleHomePage } from './components/layout/SimpleHomePage'
+import { PageTransition } from './components/common/PageTransition'
 import './styles/modern-theme.css'
 
 function App() {
@@ -41,60 +42,62 @@ function App() {
         <ModernHeader />
           
           <main className="pt-20">
-            <Routes>
-              <Route path="/" element={<SimpleHomePage />} />
-              <Route path="/auth" element={<ModernAuthPage />} />
-              <Route 
-                path="/intake" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <CustomerIntakeForm />
-                    </div>
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/queue" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <ReceptionQueue />
-                    </div>
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/consultant" 
-                element={
-                  <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <ConsultantDashboard />
-                    </div>
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/dashboard" 
-                element={
-                  <ProtectedRoute requiredRole={['manager', 'admin']}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <AnalyticsDashboard />
-                    </div>
-                  </ProtectedRoute>
-                } 
-              />
-              <Route 
-                path="/profile" 
-                element={
-                  <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
-                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                      <UserProfile />
-                    </div>
-                  </ProtectedRoute>
-                } 
-              />
-            </Routes>
+            <PageTransition>
+              <Routes>
+                <Route path="/" element={<SimpleHomePage />} />
+                <Route path="/auth" element={<ModernAuthPage />} />
+                <Route 
+                  path="/intake" 
+                  element={
+                    <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                        <CustomerIntakeForm />
+                      </div>
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/queue" 
+                  element={
+                    <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                        <ReceptionQueue />
+                      </div>
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/consultant" 
+                  element={
+                    <ProtectedRoute requiredRole={['consultant', 'manager', 'admin']}>
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                        <ConsultantDashboard />
+                      </div>
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/dashboard" 
+                  element={
+                    <ProtectedRoute requiredRole={['manager', 'admin']}>
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                        <AnalyticsDashboard />
+                      </div>
+                    </ProtectedRoute>
+                  } 
+                />
+                <Route 
+                  path="/profile" 
+                  element={
+                    <ProtectedRoute requiredRole={['reception', 'consultant', 'manager', 'admin']}>
+                      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8" data-animate>
+                        <UserProfile />
+                      </div>
+                    </ProtectedRoute>
+                  } 
+                />
+              </Routes>
+            </PageTransition>
           </main>
       </div>
       <PWAUpdater />

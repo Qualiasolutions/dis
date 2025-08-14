@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import {
   Menu,
   Avatar,
@@ -19,24 +20,78 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { notifications } from '@mantine/notifications'
 import { useAuthStore } from '../../stores/authStore'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 export function UserMenu() {
   const { t } = useTranslation()
   const { user, signOut, isAuthenticated, getUserRole } = useAuthStore()
+  const [isOpen, setIsOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const avatarRef = useRef<HTMLDivElement>(null)
+  const chevronRef = useRef<HTMLButtonElement>(null)
+
+  // Animations
+  useGSAP(() => {
+    if (isOpen && chevronRef.current) {
+      gsap.to(chevronRef.current, {
+        rotation: 180,
+        duration: 0.3,
+        ease: "power2.out"
+      })
+    } else if (!isOpen && chevronRef.current) {
+      gsap.to(chevronRef.current, {
+        rotation: 0,
+        duration: 0.3,
+        ease: "power2.out"
+      })
+    }
+  }, { dependencies: [isOpen] })
 
   const handleSignOut = async () => {
-    try {
-      await signOut()
-      notifications.show({
-        title: 'Signed Out',
-        message: 'You have been successfully signed out',
-        color: 'blue',
+    // Animate out before signing out
+    if (avatarRef.current) {
+      gsap.to(avatarRef.current, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
+        onComplete: async () => {
+          try {
+            await signOut()
+            notifications.show({
+              title: t('auth.sign_out'),
+              message: t('messages.form_submitted'),
+              color: 'blue',
+            })
+          } catch (error) {
+            notifications.show({
+              title: t('status.error'),
+              message: t('messages.sync_error'),
+              color: 'red',
+            })
+          }
+        }
       })
-    } catch (error) {
-      notifications.show({
-        title: 'Error',
-        message: 'Failed to sign out',
-        color: 'red',
+    }
+  }
+
+  const handleAvatarHover = () => {
+    if (avatarRef.current) {
+      gsap.to(avatarRef.current, {
+        scale: 1.1,
+        duration: 0.3,
+        ease: "power2.out"
+      })
+    }
+  }
+
+  const handleAvatarLeave = () => {
+    if (avatarRef.current) {
+      gsap.to(avatarRef.current, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.out"
       })
     }
   }
@@ -49,8 +104,9 @@ export function UserMenu() {
         variant="subtle"
         leftSection={<IconLogin size={16} />}
         size="sm"
+        className="transform transition-all hover:scale-105"
       >
-        Sign In
+        {t('auth.sign_in')}
       </Button>
     )
   }
@@ -59,43 +115,75 @@ export function UserMenu() {
   const userRole = getUserRole()
 
   return (
-    <Menu shadow="md" width={200}>
+    <Menu 
+      shadow="md" 
+      width={200}
+      opened={isOpen}
+      onChange={setIsOpen}
+      transitionProps={{
+        transition: 'pop-top-right',
+        duration: 200
+      }}
+    >
       <Menu.Target>
-        <Group style={{ cursor: 'pointer' }}>
-          <Avatar size="sm" radius="xl" color="blue">
-            {userName.charAt(0).toUpperCase()}
-          </Avatar>
+        <Group 
+          ref={menuRef}
+          style={{ cursor: 'pointer' }}
+          className="p-2 rounded-lg hover:bg-dealership-gray transition-colors"
+          onMouseEnter={handleAvatarHover}
+          onMouseLeave={handleAvatarLeave}
+        >
+          <div ref={avatarRef} className="transform-gpu">
+            <Avatar 
+              size="sm" 
+              radius="xl" 
+              className="bg-gradient-to-br from-blue-500 to-violet-500 text-white font-bold shadow-clean"
+            >
+              {userName.charAt(0).toUpperCase()}
+            </Avatar>
+          </div>
           <div style={{ flex: 1, textAlign: 'left' }}>
-            <Text size="sm" fw={500}>
+            <Text size="sm" fw={500} className="text-dealership-black">
               {userName}
             </Text>
             {userRole && (
-              <Badge size="xs" variant="light" color="blue">
-                {userRole}
+              <Badge 
+                size="xs" 
+                variant="light" 
+                className="bg-dealership-light text-dealership-dark-text"
+              >
+                {t(`roles.${userRole}`, userRole)}
               </Badge>
             )}
           </div>
-          <ActionIcon variant="subtle" size="sm">
+          <ActionIcon 
+            ref={chevronRef}
+            variant="subtle" 
+            size="sm"
+            className="transform-gpu"
+          >
             <IconChevronDown size={14} />
           </ActionIcon>
         </Group>
       </Menu.Target>
 
-      <Menu.Dropdown>
+      <Menu.Dropdown className="animate-fade-in">
         <Menu.Item
           leftSection={<IconUser size={14} />}
           component={Link}
           to="/profile"
+          className="hover:translate-x-1 transition-transform"
         >
-          Profile
+          {t('auth.profile')}
         </Menu.Item>
         
         <Menu.Item
           leftSection={<IconSettings size={14} />}
           component={Link}
           to="/settings"
+          className="hover:translate-x-1 transition-transform"
         >
-          Settings
+          {t('auth.settings')}
         </Menu.Item>
 
         <Divider />
@@ -104,8 +192,9 @@ export function UserMenu() {
           leftSection={<IconLogout size={14} />}
           color="red"
           onClick={handleSignOut}
+          className="hover:translate-x-1 transition-transform"
         >
-          Sign Out
+          {t('auth.sign_out')}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>
