@@ -50,7 +50,6 @@ import {
   IconEye,
   IconRobot,
   IconBrain,
-  IconLightningBolt,
   IconDashboard,
   IconCalendarStats,
   IconUserPlus,
@@ -353,7 +352,7 @@ export function ReceptionQueue() {
             {autoAssignMode && (
               <AnimatedButton
                 size="sm"
-                leftSection={<IconLightningBolt size={16} />}
+                leftSection={<IconBolt size={16} />}
                 onClick={handleAutoAssign}
                 color="violet"
               >
