@@ -4,7 +4,6 @@
   "outputDirectory": "apps/web/dist",
   "installCommand": "pnpm install --frozen-lockfile",
   "devCommand": "pnpm --filter=web dev",
-  "directoryListing": false,
   "env": {
     "VITE_SUPABASE_URL": "https://wlmljniorublcadvorvf.supabase.co",
     "VITE_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndsbWxqbmlvcnVibGNhZHZvcnZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwMTc5NjEsImV4cCI6MjA3MDU5Mzk2MX0.wfPByQtAPf2WaIB-vGG8jH-A7hD_AthnwuhT8xbLH34",
