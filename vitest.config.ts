@@ -24,8 +24,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
-      '@repo/shared': resolve(__dirname, '../../packages/shared'),
-      '@repo/ui': resolve(__dirname, '../../packages/ui'),
     },
   },
 })

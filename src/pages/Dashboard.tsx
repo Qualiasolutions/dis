@@ -25,7 +25,7 @@ import {
   IconTrendingUp
 } from '@tabler/icons-react'
 import { useTranslation } from 'react-i18next'
-import { Navigation } from '../components/common/Navigation'
+import { ModernNavigation } from '../components/common/ModernNavigation'
 import { LanguageToggle } from '../components/common/LanguageToggle'
 import { PWAUpdater } from '../components/common/PWAUpdater'
 import { useQueueStore } from '../stores/queueStore'
@@ -99,7 +99,7 @@ export function Dashboard() {
       </AppShell.Header>
 
       <AppShell.Navbar>
-        <Navigation />
+        <ModernNavigation />
       </AppShell.Navbar>
 
       <AppShell.Main>

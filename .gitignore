@@ -9,9 +9,8 @@
 # testing
 /coverage
 
-# next.js
-/.next/
-/out/
+# vite
+/dist/
 
 # production
 /build
@@ -33,7 +32,10 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# build artifacts
+.turbo/
+*.log
 
 # cursor MCP config (contains tokens)
 /.cursor/

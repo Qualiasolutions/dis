@@ -24,7 +24,7 @@ This guide covers the complete deployment process for the Dealership Intelligenc
 cp .env.example .env.production
 
 # Required environment variables:
-VITE_SUPABASE_URL=https://zcmkwavcgcwondlgphzf.supabase.co
+VITE_SUPABASE_URL=https://wlmljniorublcadvorvf.supabase.co
 VITE_SUPABASE_ANON_KEY=your_anon_key
 OPENAI_API_KEY=your_openai_key
 WHATSAPP_TOKEN=your_whatsapp_token
@@ -36,7 +36,7 @@ GA_MEASUREMENT_ID=G-XXXXXXXXXX
 
 ```bash
 # Run migrations in production
-supabase link --project-ref zcmkwavcgcwondlgphzf
+supabase link --project-ref wlmljniorublcadvorvf
 supabase db push
 
 # Verify migrations
@@ -98,7 +98,7 @@ git push origin main
 ```
 A     @       76.76.21.21
 A     www     76.76.21.21
-CNAME api     zcmkwavcgcwondlgphzf.supabase.co
+CNAME api     wlmljniorublcadvorvf.supabase.co
 ```
 
 ### Step 4: Setup WhatsApp Business
