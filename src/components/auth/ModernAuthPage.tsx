@@ -2,13 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
-  IconUser, 
   IconLock, 
-  IconMail, 
-  IconPhone,
-  IconArrowRight,
-  IconEye,
-  IconEyeOff
+  IconArrowRight
 } from '@tabler/icons-react'
 import { useAuthStore } from '../../stores/authStore'
 import { notifications } from '@mantine/notifications'
@@ -17,64 +12,30 @@ import '../../styles/modern-theme.css'
 
 export function ModernAuthPage() {
   const navigate = useNavigate()
-  const { signIn, signUp } = useAuthStore()
-  const [isSignUp, setIsSignUp] = useState(false)
-  const [showPassword, setShowPassword] = useState(false)
+  const { signInWithCode } = useAuthStore()
   const [loading, setLoading] = useState(false)
-  
-  const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    fullName: '',
-    phoneNumber: '',
-    userRole: 'consultant' as const
-  })
+  const [code, setCode] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     
     try {
-      if (isSignUp) {
-        const result = await signUp({
-          email: formData.email,
-          password: formData.password,
-          full_name: formData.fullName,
-          phone_number: formData.phoneNumber,
-          user_role: formData.userRole
+      const result = await signInWithCode(code)
+      
+      if (result.success) {
+        notifications.show({
+          title: 'Welcome!',
+          message: 'Access granted successfully',
+          color: 'green'
         })
-        
-        if (result.success) {
-          notifications.show({
-            title: 'Welcome!',
-            message: 'Account created successfully',
-            color: 'green'
-          })
-          navigate('/')
-        } else {
-          notifications.show({
-            title: 'Error',
-            message: result.error || 'Failed to create account',
-            color: 'red'
-          })
-        }
+        navigate('/')
       } else {
-        const result = await signIn(formData.email, formData.password)
-        
-        if (result.success) {
-          notifications.show({
-            title: 'Welcome back!',
-            message: 'Signed in successfully',
-            color: 'green'
-          })
-          navigate('/')
-        } else {
-          notifications.show({
-            title: 'Error',
-            message: result.error || 'Invalid credentials',
-            color: 'red'
-          })
-        }
+        notifications.show({
+          title: 'Error',
+          message: result.error || 'Invalid access code',
+          color: 'red'
+        })
       }
     } catch (error) {
       notifications.show({
@@ -147,82 +108,27 @@ export function ModernAuthPage() {
           >
             <h2 className="text-3xl font-bold mb-2">
               <span className="gradient-text animate-gradient bg-gradient-to-r from-blue-600 via-violet-600 to-blue-600">
-                {isSignUp ? 'Create Account' : 'Welcome Back'}
+                Access Portal
               </span>
             </h2>
             <p className="text-gray-600">
-              {isSignUp ? 'Join our AI-powered platform' : 'Sign in to continue'}
+              Enter your access code to continue
             </p>
           </motion.div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <AnimatePresence mode="wait">
-              {isSignUp && (
-                <motion.div
-                  key="signup-fields"
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="space-y-4"
-                >
-                  <div className="relative">
-                    <IconUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                    <input
-                      type="text"
-                      placeholder="Full Name"
-                      value={formData.fullName}
-                      onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="relative">
-                    <IconPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                    <input
-                      type="tel"
-                      placeholder="Phone Number"
-                      value={formData.phoneNumber}
-                      onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
-                      className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
-                      required
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <div className="relative">
-              <IconMail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-              <input
-                type="email"
-                placeholder="Email Address"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
-                required
-              />
-            </div>
-
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="relative">
               <IconLock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
               <input
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Password"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                className="w-full pl-12 pr-12 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all"
+                type="text"
+                placeholder="Enter access code"
+                value={code}
+                onChange={(e) => setCode(e.target.value)}
+                className="w-full pl-12 pr-4 py-3 rounded-xl border border-gray-200 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all text-center text-lg font-mono tracking-widest"
                 required
+                autoComplete="off"
               />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
-              >
-                {showPassword ? <IconEyeOff size={20} /> : <IconEye size={20} />}
-              </button>
             </div>
 
             <motion.button
@@ -237,7 +143,7 @@ export function ModernAuthPage() {
                   <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                 ) : (
                   <>
-                    {isSignUp ? 'Create Account' : 'Sign In'}
+                    Access System
                     <IconArrowRight className="group-hover:translate-x-1 transition-transform" />
                   </>
                 )}
@@ -246,22 +152,15 @@ export function ModernAuthPage() {
             </motion.button>
           </form>
 
-          {/* Toggle */}
+          {/* Help Text */}
           <motion.div 
             className="mt-6 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            <p className="text-gray-600">
-              {isSignUp ? 'Already have an account?' : "Don't have an account?"}
-              <button
-                type="button"
-                onClick={() => setIsSignUp(!isSignUp)}
-                className="ml-2 text-blue-600 font-semibold hover:text-blue-700 transition-colors"
-              >
-                {isSignUp ? 'Sign In' : 'Sign Up'}
-              </button>
+            <p className="text-gray-500 text-sm">
+              Enter the access code provided by your administrator
             </p>
           </motion.div>
         </div>

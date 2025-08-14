@@ -1,18 +1,39 @@
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'http://localhost:54321'
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-anon-key'
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'demo-anon-key'
+const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true'
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
     persistSession: true,
-    autoRefreshToken: true,
+    autoRefreshToken: !isDemoMode,
+    detectSessionInUrl: !isDemoMode,
   },
   realtime: {
     params: {
       eventsPerSecond: 10,
     },
   },
+  global: {
+    fetch: (url, options = {}) => {
+      // Add timeout to prevent hanging requests
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 5000)
+      
+      return fetch(url, {
+        ...options,
+        signal: controller.signal,
+      }).finally(() => {
+        clearTimeout(timeoutId)
+      }).catch(error => {
+        if (error.name === 'AbortError') {
+          throw new Error('Connection timeout - Supabase service unavailable')
+        }
+        throw error
+      })
+    }
+  }
 })
 
 // Connection status monitoring

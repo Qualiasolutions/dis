@@ -22,9 +22,8 @@ interface AuthStore {
   initialized: boolean
   
   // Actions
-  signIn: (email: string, password: string) => Promise<{ error: any }>
+  signInWithCode: (code: string) => Promise<{ success: boolean; error: string | null }>
   signOut: () => Promise<void>
-  signUp: (email: string, password: string, userData: { name: string; role: UserRole }) => Promise<{ error: any }>
   initialize: () => Promise<void>
   updateProfile: (data: Partial<AuthUser['consultant_profile']>) => Promise<void>
   
@@ -52,12 +51,12 @@ export const useAuthStore = create<AuthStore>()(
       loading: false,
       initialized: false,
 
-      signIn: async (email: string, password: string) => {
+      signInWithCode: async (code: string) => {
         set({ loading: true })
         
         try {
-          // Simple admin login for demo/testing
-          if (email === 'admin' && password === 'admin') {
+          // Check if code is 'admin'
+          if (code.toLowerCase() === 'admin') {
             const adminUser: AuthUser = {
               id: 'admin-user',
               email: 'admin@tahboubgroup.com',
@@ -83,52 +82,18 @@ export const useAuthStore = create<AuthStore>()(
               loading: false 
             })
             
-            return { error: null }
-          }
-
-          // Regular Supabase authentication
-          const { data, error } = await supabase.auth.signInWithPassword({
-            email,
-            password,
-          })
-
-          if (error) {
+            return { success: true, error: null }
+          } else {
             set({ loading: false })
-            return { error }
+            return { success: false, error: 'Invalid access code. Please try again.' }
           }
-
-          if (data.user) {
-            // Fetch consultant profile
-            const { data: profile, error: profileError } = await supabase
-              .from('consultants')
-              .select('*')
-              .eq('email', data.user.email)
-              .single()
-
-            if (!profileError && profile) {
-              const userWithProfile: AuthUser = {
-                ...data.user,
-                consultant_profile: profile
-              }
-              
-              set({ 
-                user: userWithProfile, 
-                session: data.session,
-                loading: false 
-              })
-            } else {
-              set({ 
-                user: data.user, 
-                session: data.session,
-                loading: false 
-              })
-            }
-          }
-
-          return { error: null }
         } catch (error) {
+          console.error('Login error:', error)
           set({ loading: false })
-          return { error }
+          return { 
+            success: false, 
+            error: 'An unexpected error occurred. Please try again.' 
+          }
         }
       },
 
@@ -161,49 +126,6 @@ export const useAuthStore = create<AuthStore>()(
         }
       },
 
-      signUp: async (email: string, password: string, userData: { name: string; role: UserRole }) => {
-        set({ loading: true })
-        
-        try {
-          const { data, error } = await supabase.auth.signUp({
-            email,
-            password,
-            options: {
-              data: {
-                name: userData.name,
-                role: userData.role,
-              }
-            }
-          })
-
-          if (error) {
-            set({ loading: false })
-            return { error }
-          }
-
-          // Create consultant profile
-          if (data.user) {
-            const { error: profileError } = await supabase
-              .from('consultants')
-              .insert({
-                email: data.user.email!,
-                name: userData.name,
-                role: userData.role,
-                active: true,
-              })
-
-            if (profileError) {
-              console.error('Profile creation error:', profileError)
-            }
-          }
-
-          set({ loading: false })
-          return { error: null }
-        } catch (error) {
-          set({ loading: false })
-          return { error }
-        }
-      },
 
       initialize: async () => {
         set({ loading: true })
