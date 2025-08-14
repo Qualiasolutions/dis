@@ -56,6 +56,37 @@ export const useAuthStore = create<AuthStore>()(
         set({ loading: true })
         
         try {
+          // Simple admin login for demo/testing
+          if (email === 'admin' && password === 'admin') {
+            const adminUser: AuthUser = {
+              id: 'admin-user',
+              email: 'admin@tahboubgroup.com',
+              user_metadata: { name: 'Administrator' },
+              app_metadata: {},
+              aud: 'authenticated',
+              created_at: new Date().toISOString(),
+              consultant_profile: {
+                id: 'admin-profile',
+                name: 'System Administrator',
+                role: 'admin' as UserRole,
+                active: true,
+                performance_metrics: {}
+              }
+            } as AuthUser
+
+            set({ 
+              user: adminUser, 
+              session: { 
+                access_token: 'admin-token',
+                user: adminUser
+              } as any,
+              loading: false 
+            })
+            
+            return { error: null }
+          }
+
+          // Regular Supabase authentication
           const { data, error } = await supabase.auth.signInWithPassword({
             email,
             password,
@@ -105,6 +136,19 @@ export const useAuthStore = create<AuthStore>()(
         set({ loading: true })
         
         try {
+          const currentUser = get().user
+          
+          // Handle admin logout (no Supabase session to clear)
+          if (currentUser?.id === 'admin-user') {
+            set({ 
+              user: null, 
+              session: null, 
+              loading: false 
+            })
+            return
+          }
+          
+          // Regular Supabase logout
           await supabase.auth.signOut()
           set({ 
             user: null, 
