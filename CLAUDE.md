@@ -26,9 +26,13 @@ pnpm check-types
 pnpm test
 pnpm test:run          # Run once without watching
 pnpm test:coverage     # Generate coverage report
+pnpm test:ui           # Open Vitest UI
 
 # Format code
 pnpm format
+
+# Preview production build
+pnpm preview
 ```
 
 ### Database Commands
